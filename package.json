@@ -1,0 +1,17 @@
+{
+  "name": "clock-module-finder",
+  "version": "1.0.0",
+  "description": "A package to count the number of times a clock emplyee's package has been used",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clocklimited/clock-module-finder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/clocklimited/clock-module-finder/issues"
+  },
+  "homepage": "https://github.com/clocklimited/clock-module-finder#readme"
+}
