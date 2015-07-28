@@ -13,5 +13,11 @@
   "bugs": {
     "url": "https://github.com/clocklimited/clock-module-finder/issues"
   },
-  "homepage": "https://github.com/clocklimited/clock-module-finder#readme"
+  "homepage": "https://github.com/clocklimited/clock-module-finder#readme",
+  "dependencies": {
+    "github": "^0.2.4"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.5"
+  }
 }
