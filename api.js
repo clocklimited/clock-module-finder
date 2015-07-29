@@ -11,42 +11,51 @@ module.exports = function() {
   , token: passwords.token 
   }) 
 
-  function getOrgMembers(team, cb) {
+  function getOrgMembers(options, cb) {
+    options = options || {};
+    if(!options.org) throw new Error('Need an organisation name to get members list')
     github.orgs.getMembers({
-      org: 'clocklimited' // Team Clock
+      org: options.org
+    , page: options.pageNumber || 1
+    , per_page: 100
     }, function (err, res) {
       if(err) throw new Error('Could not get org members')
       cb(res)
     })
   }
-  function getTeamRepos(options, cb) {
-    var options = options || {};
-    if(!options.teamId) throw new Error('Need a team id to get team repos')
-    options.pageNumber = options.pageNumber || 1;
 
+  function getTeamRepos(options, cb) {
+    options = options || {};
+    if(!options.teamId) throw new Error('Need a team id to get team repos')
     github.orgs.getTeamRepos({
-      per_page: 100
-    , page: options.pageNumber
-    , id: options.teamId
+      id: options.teamId
+    , page: options.pageNumber || 1
+    , per_page: 100
     }, function(err, res) {
       if(err) throw new Error('Could not get team repos')
       cb(res)
     }) 
   }
-  function getUserRepos(username, cb) {
+
+  function getUserRepos(options, cb) {
+    options = options || {}
+    if(!options.user) throw new Error('Need a username to get team repos')
     github.repos.getFromUser({
-      per_page: 100
-    , page: 1
-    , user: username 
+      id: options.user
+    , page: options.pageNumber || 1
+    , per_page: 100
     }, function(err, res) {
       if(err) throw new Error('Could not get user repos')
       cb(res)
     }) 
   }
-  function getPackageJson(username, repoName, cb) {
+
+  function getPackageJson(options, cb) {
+    options = options || {}
+    if(!options.user || !options.repo) throw new Error('Need a username and repo to get package.json')
     github.repos.getContent({
-      user: username
-    , repo: repoName
+      user: options.user
+    , repo: options.repo
     , path: 'package.json'
     }, function(err, res) {
       if(err) throw new Error('Could not check for package.json')

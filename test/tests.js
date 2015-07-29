@@ -1,11 +1,12 @@
-var mocha = require('mocha')
+var Mocha = require('mocha')
   , assert = require('assert')
   , api = require('../api')()
+  , mocha = new Mocha()
 
-describe('module-finder', function() {
+mocha.describe('module-finder', function() {
 
-  describe('#getClockMembers', function() {
-    it('should get the list of current Clock members', function(done) {
+  mocha.describe('#getClockMembers', function() {
+    mocha.it('should get the list of current Clock members', function(done) {
       api.getOrgMembers('clocklimited', function (members) {
         assert.equal((typeof members), 'object')
         assert.equal(members.length > 0, true)
@@ -16,20 +17,20 @@ describe('module-finder', function() {
 
     })
 
-    it.skip('should add non-Clock members from an include list', function () {
+    mocha.it.skip('should add non-Clock members from an include list', function () {
       // TODO: Implement include lists
       var includeList = ['maael']
 
       api.getOrgMembers('clocklimited', function (members) {
         var includedMembers = members.filter(function (member) {
-          return excludeList.indexOf(member.login) > -1
+          return mocha.excludeList.indexOf(member.login) > -1
         });
 
         assert.equal(includeList.length, includedMembers.length, 'Included members aren\'t returned')
       })
     })
 
-    it.skip('should exclude Clock members from an exclude list', function () {
+   mocha.it.skip('should exclude Clock members from an exclude list', function () {
       // TODO: Implement exclude lists
       var excludeList = ['maael']
 
@@ -44,8 +45,8 @@ describe('module-finder', function() {
 
   })
 
-  describe('#getClockRepos', function() {
-    it('should get the full list of Clock repos', function(done) {
+  mocha.describe('#getClockRepos', function() {
+   mocha.it('should get the full list of Clock repos', function(done) {
       this.timeout(0)
       api.getTeamRepos({teamId: '152302'}, function(repos) {
         assert.equal(typeof repos, 'object', 'Repo list is an object')
