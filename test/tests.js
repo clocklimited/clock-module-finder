@@ -4,6 +4,15 @@ var assert = require('assert')
 describe('module-finder', function() {
 
   describe('#getClockMembers', function() {
+
+    it('should get multiple pages of members for google', function(done) {
+      this.timeout(0)
+      api.getOrgMembers({ org: 'google' }, function (members) {
+        assert.equal(members.length > 400, true, 'Has got all pages')
+        done()
+      })
+    })
+
     it('should get the list of current Clock members', function(done) {
       api.getOrgMembers({ org: 'clocklimited' }, function (members) {
         assert.equal((typeof members), 'object')

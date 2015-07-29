@@ -13,14 +13,21 @@ module.exports = function() {
 
   function getOrgMembers(options, cb) {
     options = options || {};
+    options.data = options.data || []
+    options.pageNumber = options.pageNumber || 1
     if(!options.org) throw new Error('Need an organisation name to get members list')
     github.orgs.getMembers({
       org: options.org
-    , page: options.pageNumber || 1
+    , page: options.pageNumber
     , per_page: 100
     }, function (err, res) {
       if(err) throw new Error('Could not get org members')
-      cb(res)
+      options.data = options.data.concat(res)
+      if(res.length === 100) {
+        getNextPage(options, getOrgMembers, cb)
+      } else {
+        cb(options.data)
+      }
     })
   }
 
@@ -46,14 +53,21 @@ module.exports = function() {
 
   function getUserRepos(options, cb) {
     options = options || {}
+    options.data = options.data || []
     if(!options.user) throw new Error('Need a username to get team repos')
+    options.pageNumber = options.pageNumber || 1
     github.repos.getFromUser({
       id: options.user
-    , page: options.pageNumber || 1
+    , page: options.pageNumber 
     , per_page: 100
     }, function(err, res) {
       if(err) throw new Error('Could not get user repos')
-      cb(res)
+      options.data = options.data.concat(res)
+      if(res.length === 100) {
+        getNextPage(options, getTeamRepos, cb)
+      } else {
+        cb(options.data)
+      }
     }) 
   }
 
