@@ -1,0 +1,18 @@
+{
+  "name": "package.json",
+  "path": "package.json",
+  "sha": "ce26af6e57a45b438a3eda5008fc7dda3c1afe8e",
+  "size": 913,
+  "url": "https://api.github.com/repos/maael/gw2-api-wrapper/contents/package.json?ref=master",
+  "html_url": "https://github.com/maael/gw2-api-wrapper/blob/master/package.json",
+  "git_url": "https://api.github.com/repos/maael/gw2-api-wrapper/git/blobs/ce26af6e57a45b438a3eda5008fc7dda3c1afe8e",
+  "download_url": "https://raw.githubusercontent.com/maael/gw2-api-wrapper/master/package.json",
+  "type": "file",
+  "content": "ewogICJuYW1lIjogImd3Mi1hcGktd3JhcHBlciIsCiAgInZlcnNpb24iOiAi\nMS4wLjAiLAogICJkZXNjcmlwdGlvbiI6ICJBIGphdmFzY3JpcHQgd3JhcHBl\nciBmb3IgdGhlIGd3MiBhcGkgdGhhdCB1c2VzIHByb21pc2VzLiIsCiAgIm1h\naW4iOiAiaW5kZXguanMiLAogICJkaXJlY3RvcmllcyI6IHsKICAgICJ0ZXN0\nIjogInRlc3QiCiAgfSwKICAicmVwb3NpdG9yeSI6IHsKICAgICJ0eXBlIjog\nImdpdCIsCiAgICAidXJsIjogImh0dHBzOi8vZ2l0aHViLmNvbS9tYWFlbC9n\ndzItYXBpLXdyYXBwZXIuZ2l0IgogIH0sCiAgImJ1Z3MiOiB7CiAgICAidXJs\nIjogImh0dHBzOi8vZ2l0aHViLmNvbS9tYWFlbC9ndzItYXBpLXdyYXBwZXIv\naXNzdWVzIgogIH0sCiAgImhvbWVwYWdlIjogImh0dHBzOi8vZ2l0aHViLmNv\nbS9tYWFlbC9ndzItYXBpLXdyYXBwZXIiLAogICJkZXBlbmRlbmNpZXMiOiB7\nCiAgICAiY2hhaSI6ICJeMy4wLjAiLAogICAgImNoYWktYXMtcHJvbWlzZWQi\nOiAiXjUuMS4wIiwKICAgICJjaGFpLXRoaW5ncyI6ICJeMC4yLjAiLAogICAg\nInJlcXVlc3QiOiAiXjIuNTguMCIKICB9LAogICJkZXZEZXBlbmRlbmNpZXMi\nOiB7CiAgICAiY2hhaSI6ICJeMy4wLjAiLAogICAgImNoYWktYXMtcHJvbWlz\nZWQiOiAiXjUuMS4wIiwKICAgICJjaGFpLXRoaW5ncyI6ICJeMC4yLjAiLAog\nICAgIm1vY2hhIjogIl4yLjIuNSIKICB9LAogICJzY3JpcHRzIjogewogICAg\nInRlc3QiOiAibW9jaGEiCiAgfSwKICAia2V5d29yZHMiOiBbCiAgICAiZ3Vp\nbGQiLAogICAgIndhcnMiLAogICAgIjIiLAogICAgImd3MiIsCiAgICAiZ2Ft\nZXMiLAogICAgImFwaSIsCiAgICAid3JhcHBlciIsCiAgICAicHJvbWlzZXMi\nCiAgXSwKICAiYXV0aG9yIjogIk1hdHRoZXcgRWxwaGljayIsCiAgImxpY2Vu\nc2UiOiAiTUlUIgp9Cg==\n",
+  "encoding": "base64",
+  "_links": {
+    "self": "https://api.github.com/repos/maael/gw2-api-wrapper/contents/package.json?ref=master",
+    "git": "https://api.github.com/repos/maael/gw2-api-wrapper/git/blobs/ce26af6e57a45b438a3eda5008fc7dda3c1afe8e",
+    "html": "https://github.com/maael/gw2-api-wrapper/blob/master/package.json"
+  }
+}

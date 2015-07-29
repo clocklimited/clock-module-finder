@@ -2,10 +2,14 @@ var assert = require('assert')
   , api = require('../api')()
   , finder = require('../finder')()
 
+/* Uncomment / comment for offline / online tests */
+require('./nockSetup.js')()
+
 describe('module-finder', function() {
 
   describe('#getClockMembers', function() {
 
+    // Skipped as there is not a nock case
     it('should get multiple pages of members for google', function(done) {
       this.timeout(0)
       api.getOrgMembers({ org: 'google' }, function (err, members) {
@@ -82,21 +86,40 @@ describe('module-finder', function() {
   })
 
   describe('#getClockRepos', function() {
-    it('should get the full list of Clock repos', function(done) {
+    it('should get the short list of Clock repos', function(done) {
+      this.timeout(0)
+      api.getRepos({ teamId: '152302' }, function(err, repos) {
+        assert.equal(typeof repos, 'object', 'Repo list is not an object')
+        done()
+      })
+    })
+    
+    // Skipped as there isn't a nock case
+    it('should get the multiple pages of Clock repos', function(done) {
       this.timeout(0)
       api.getRepos({ teamId: '152302' }, function(err, repos) {
         assert.equal(typeof repos, 'object', 'Repo list is an object')
-        assert.equal(repos.length > 100, true, 'Has used multiple pages')
+        assert.equal(repos.length > 100, true, 'Has not used multiple pages')
         done()
       })
     })
   })
 
   describe('#getUserRepos', function() {
-    it('should get the full list of tj\'s repos', function(done) {
+    it('should get list of repos', function(done) {
       this.timeout(0)
       api.getRepos({ user: 'tj' }, function(err, repos) {
-        assert.equal(repos.length > 100, true, 'Has used multiple pages')
+        assert.equal(typeof repos, 'object', 'Repo list is not an object')
+        done()
+      })
+    })
+    
+    // Skipped as there isn't a nock case
+    it('should get multiple pages of tj\'s repos', function(done) {
+      this.timeout(0)
+      api.getRepos({ user: 'tj' }, function(err, repos) {
+        assert.equal(typeof repos, 'object', 'Repo list is an object')
+        assert.equal(repos.length > 100, true, 'Has not used multiple pages')
         done()
       })
     })
