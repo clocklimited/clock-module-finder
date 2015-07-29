@@ -16,7 +16,7 @@ module.exports = function() {
     github.orgs.getMembers(
       { org: options.org
       , page: options.pageNumber
-      , per_page: 100
+      , 'per_page': 100 // To adhere to JShintrc
       } 
     , function (err, res) {
         if (err) return cb(err)
@@ -50,7 +50,7 @@ module.exports = function() {
 
     var githubOptions = 
         { page: options.pageNumber
-        , per_page: 100
+        , 'per_page': 100 // To adhere to JShintrc
         }
     if (options.teamId) {
       githubOptions.id = options.teamId

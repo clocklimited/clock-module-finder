@@ -1,6 +1,7 @@
 var api = require('./api')()
 
-function finder () {
+module.exports = function () {
+
   function getUniqueClockRepos(cb) {
     var repoNames
       , notInList
@@ -39,8 +40,7 @@ function finder () {
   function getDependencies(options, cb) {
     api.getPackageJson(options, function(err, res) {
       if (err || !res.content) {
-        console.log('No package.json in ' + options.user + '/' + options.repo)
-        return cb(err)
+        return cb(new Error('No package.json in ' + options.user + '/' + options.repo))
       } else {
         var data = JSON.parse(new Buffer(res.content, 'base64').toString())
         , dependencies = []
@@ -57,17 +57,3 @@ function finder () {
   , getDependencies: getDependencies
   }
 }
-
-finder().getDependencies({
-  user: 'maael'
-, repo: 'gw2-api-wrapper'
-}, function(res) {
-  console.log(res)
-});
-
-finder().getDependencies({
-  user: 'bag-man'
-, repo: 'process-game'
-}, function(res) {
-  console.log(res)
-});
