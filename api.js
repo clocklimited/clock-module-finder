@@ -26,14 +26,21 @@ module.exports = function() {
 
   function getTeamRepos(options, cb) {
     options = options || {};
+    options.data = options.data || []
     if(!options.teamId) throw new Error('Need a team id to get team repos')
+    options.pageNumber = options.pageNumber || 1
     github.orgs.getTeamRepos({
       id: options.teamId
-    , page: options.pageNumber || 1
+    , page: options.pageNumber
     , per_page: 100
     }, function(err, res) {
       if(err) throw new Error('Could not get team repos')
-      cb(res)
+      options.data = options.data.concat(res)
+      if(res.length === 100) {
+        getNextPage(options, getTeamRepos, cb)
+      } else {
+        cb(options.data)
+      }
     }) 
   }
 
@@ -61,6 +68,11 @@ module.exports = function() {
       if(err) throw new Error('Could not check for package.json')
       cb(res)
     }) 
+  }
+
+  function getNextPage(options, returnFunction, cb) {
+    options.pageNumber += 1
+    returnFunction(options, cb)
   }
 
   return {

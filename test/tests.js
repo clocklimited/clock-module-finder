@@ -45,13 +45,13 @@ describe('module-finder', function() {
 
   describe('#getClockRepos', function() {
     it('should get the full list of Clock repos', function(done) {
-      this.timeout(5000)
+      //this.timeout(5000)
+      this.timeout(0)
       api.getTeamRepos({ teamId: '152302' }, function(repos) {
         assert.equal(typeof repos, 'object', 'Repo list is an object')
-        assert.equal(repos.length > 0, true, 'Repo list has repos in it')
+        assert.equal(repos.length > 100, true, 'Has used second page')
         done()
       })
     })
   })
-
 })
