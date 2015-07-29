@@ -133,8 +133,10 @@ describe('moduleFinder', function () {
     it('should find modules', function (done) {
       this.timeout(0)
       moduleFinder.findModules(function (err, modules) {
-        console.log(err)
         console.log(modules)
+        assert.deepEqual(typeof modules, 'array', 'Modules was not an array')
+        assert.equal(modules.length > 0, true, 'Modules has no elements')
+        done()
       })
     })
   })

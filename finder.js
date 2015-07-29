@@ -9,6 +9,10 @@ module.exports = function () {
 
     api.getRepos({teamId: '152302'}, function (err, repos) {
 
+      if (err) {
+        return cb(err)
+      }
+
       repoNames = repos.reduce(function (list, repo) {
         notInList = (list.indexOf(repo.name) < 0)
         language = (repo.language === 'JavaScript' || repo.language === null)
@@ -21,19 +25,23 @@ module.exports = function () {
         return list
       }, [])
 
-      cb(repoNames);
+      cb(null, repoNames);
     })
   }
 
   function getClockMembersList(cb) {
     api.getOrgMembers({ org: 'clocklimited' }, function (err, members) {
 
+      if(err) {
+        return cb(err)
+      }
+
       var membersList = members.reduce(function (list, member) {
         list.push(member.login)
         return list
       }, [])
 
-      cb(membersList)
+      cb(null, membersList)
     })
   }
 
