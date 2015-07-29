@@ -5,7 +5,7 @@ module.exports = function () {
   function findModules(cb) {
     var actualPackages
 
-    finder.getUniqueClockRepos(function (repos) {
+    finder.getUniqueClockRepos(function (err, repos) {
 
       var possiblePackages = []
         , options
@@ -23,7 +23,7 @@ module.exports = function () {
 
         if(err) throw new Error('Could not get possible packages')
 
-        finder.getGetClockMemberList(function (members) {
+        finder.getGetClockMemberList(function (err, members) {
 
           function memberPackages(elememnt) {
             var repoUrlParts = element.split('/')
