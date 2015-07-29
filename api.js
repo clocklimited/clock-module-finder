@@ -1,63 +1,64 @@
 var GitHubApi = require('github')
   , passwords = require('./passwords.json')
 
-var github = new GitHubApi({
-  version: '3.0.0'
-})
+module.exports = function() {
+  var github = new GitHubApi({
+    version: '3.0.0'
+  })
 
-github.authenticate({
-  type: 'token'
-, token: passwords.token 
-})
+  github.authenticate({
+    type: 'token'
+  , token: passwords.token 
+  }) 
 
-github.orgs.getMembers({
-  org: 'clocklimited' // Team Clock
-}, function (err, res) {
-  if (!err) {
-    for(var i = 0; i < res.length; i++) {
-      console.log((i+1) + '. ' + res[i].login)
-    }
-  } else {
-    console.log(err)
+  function getOrgMembers(team, cb) {
+    github.orgs.getMembers({
+      org: 'clocklimited' // Team Clock
+    }, function (err, res) {
+      if(err) throw new Error('Could not get org members')
+      cb(res)
+    })
   }
-})
+  function getTeamRepos(options, cb) {
+    var options = options || {};
+    if(!options.teamId) throw new Error('Need a team id to get team repos')
+    options.pageNumber = options.pageNumber || 1;
 
-github.orgs.getTeamRepos({
-  per_page: 100
-, page: 1
-, id: '152302' // Clocklimited's 'Clock' team ID
-}, function(err, res) {
-  if (!err) {
-    for(var i = 0; i < res.length; i++) {
-      console.log((i+1) + '. ' + res[i].name)
-    }
-  } else {
-    console.log(err)
+    github.orgs.getTeamRepos({
+      per_page: 100
+    , page: options.pageNumber
+    , id: options.teamId
+    }, function(err, res) {
+      if(err) throw new Error('Could not get team repos')
+      cb(res)
+    }) 
   }
-}) 
+  function getUserRepos(username, cb) {
+    github.repos.getFromUser({
+      per_page: 100
+    , page: 1
+    , user: username 
+    }, function(err, res) {
+      if(err) throw new Error('Could not get user repos')
+      cb(res)
+    }) 
+  }
+  function getPackageJson(username, repoName, cb) {
+    github.repos.getContent({
+      user: username
+    , repo: repoName
+    , path: 'package.json'
+    }, function(err, res) {
+      if(err) throw new Error('Could not check for package.json')
+      cb(res)
+    }) 
+  }
 
-github.repos.getFromUser({
-  per_page: 100
-, page: 1
-, user: 'maael' 
-}, function(err, res) {
-  if (!err) {
-    for(var i = 0; i < res.length; i++) {
-      console.log((i+1) + '. ' + res[i].name)
-    }
-  } else {
-    console.log(err)
+  return {
+    getOrgMembers: getOrgMembers
+  , getTeamRepos: getTeamRepos
+  , getUserRepos: getUserRepos
+  , getPackageJson: getPackageJson
   }
-}) 
 
-github.repos.getContent({
-  user: 'bag-man'
-, repo: 'nodeup'
-, path: 'package.json'
-}, function(err, res) {
-  if (!err) {
-    console.log(res)
-  } else {
-    console.log(err)
-  }
-}) 
+}
