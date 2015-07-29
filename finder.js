@@ -7,7 +7,7 @@ module.exports = function () {
       , notInList
       , language
 
-    api.getRepos({teamId: '152302'}, function (repos) {
+    api.getRepos({teamId: '152302'}, function (err, repos) {
 
       repoNames = repos.reduce(function (list, repo) {
         notInList = (list.indexOf(repo.name) < 0)
@@ -26,7 +26,7 @@ module.exports = function () {
   }
 
   function getClockMembersList(cb) {
-    api.getOrgMembers({ org: 'clocklimited' }, function (members) {
+    api.getOrgMembers({ org: 'clocklimited' }, function (err, members) {
 
       var membersList = members.reduce(function (list, member) {
         list.push(member.login)
@@ -38,7 +38,7 @@ module.exports = function () {
   }
 
   function getDependencies(options, cb) {
-    api.getPackageJson(options, function(err, res) {
+    api.getPackageJson(options, function (err, res) {
       if (err || !res.content) {
         return cb(new Error('No package.json in ' + options.user + '/' + options.repo))
       } else {
