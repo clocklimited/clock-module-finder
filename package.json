@@ -16,6 +16,7 @@
   "homepage": "https://github.com/clocklimited/clock-module-finder#readme",
   "dependencies": {
     "github": "^0.2.4",
+    "nock": "^2.9.1",
     "npm": "^2.13.2"
   },
   "devDependencies": {
