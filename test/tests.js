@@ -55,7 +55,7 @@ describe('module-finder', function() {
   describe('#getClockRepos', function() {
     it.skip('should get the full list of Clock repos', function(done) {
       this.timeout(0)
-      api.getTeamRepos({ teamId: '152302' }, function(repos) {
+      api.getRepos({ teamId: '152302' }, function(repos) {
         assert.equal(typeof repos, 'object', 'Repo list is an object')
         assert.equal(repos.length > 100, true, 'Has used multiple pages')
         done()
@@ -66,7 +66,7 @@ describe('module-finder', function() {
   describe('#getUserRepos', function() {
     it.skip('should get the full list of substack\'s repos', function(done) {
       this.timeout(0)
-      api.getUserRepos({ user: 'substack' }, function(repos) {
+      api.getRepos({ user: 'substack' }, function(repos) {
         assert.equal(repos.length > 100, true, 'Has used multiple pages')
         done()
       })
