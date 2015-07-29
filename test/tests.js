@@ -10,7 +10,7 @@ describe('module-finder', function() {
   describe('#getClockMembers', function() {
 
     // Skipped as there is not a nock case
-    it('should get multiple pages of members for google', function(done) {
+    it.skip('should get multiple pages of members for google', function(done) {
       this.timeout(0)
       api.getOrgMembers({ org: 'google' }, function (err, members) {
         assert.equal(members.length > 400, true, 'Has got all pages')
@@ -88,14 +88,14 @@ describe('module-finder', function() {
   describe('#getClockRepos', function() {
     it('should get the short list of Clock repos', function(done) {
       this.timeout(0)
-      api.getRepos({ teamId: '152302' }, function(err, repos) {
+      api.getRepos({ teamId: '152302', type: 'private' }, function(err, repos) {
         assert.equal(typeof repos, 'object', 'Repo list is not an object')
         done()
       })
     })
     
     // Skipped as there isn't a nock case
-    it('should get the multiple pages of Clock repos', function(done) {
+    it.skip('should get the multiple pages of Clock repos', function(done) {
       this.timeout(0)
       api.getRepos({ teamId: '152302' }, function(err, repos) {
         assert.equal(typeof repos, 'object', 'Repo list is an object')
@@ -115,7 +115,7 @@ describe('module-finder', function() {
     })
     
     // Skipped as there isn't a nock case
-    it('should get multiple pages of tj\'s repos', function(done) {
+    it.skip('should get multiple pages of tj\'s repos', function(done) {
       this.timeout(0)
       api.getRepos({ user: 'tj' }, function(err, repos) {
         assert.equal(typeof repos, 'object', 'Repo list is an object')
