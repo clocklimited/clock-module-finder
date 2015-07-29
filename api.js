@@ -57,14 +57,14 @@ module.exports = function() {
     if(!options.user) throw new Error('Need a username to get team repos')
     options.pageNumber = options.pageNumber || 1
     github.repos.getFromUser({
-      id: options.user
+      user: options.user
     , page: options.pageNumber 
     , per_page: 100
     }, function(err, res) {
       if(err) throw new Error('Could not get user repos')
       options.data = options.data.concat(res)
       if(res.length === 100) {
-        getNextPage(options, getTeamRepos, cb)
+        getNextPage(options, getUserRepos, cb)
       } else {
         cb(options.data)
       }
