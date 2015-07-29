@@ -78,6 +78,21 @@ module.exports = function() {
     returnFunction(options, cb)
   }
 
+  // To be moved later
+  /*
+  , npm = require('npm')
+
+  npm.load({}, function(){
+    getPackageRepo({packageName: 'express'}) 
+  }) 
+
+  function getPackageRepo(options) {
+    npm.commands.view([options.packageName, 'repository.url'], true, function(err, res) {
+      console.log(res[Object.keys(res)[0]]['repository.url'])
+    })
+  }
+  */
+
   return {
     getOrgMembers: getOrgMembers
   , getRepos: getRepos

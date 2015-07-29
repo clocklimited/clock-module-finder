@@ -15,7 +15,8 @@
   },
   "homepage": "https://github.com/clocklimited/clock-module-finder#readme",
   "dependencies": {
-    "github": "^0.2.4"
+    "github": "^0.2.4",
+    "npm": "^2.13.2"
   },
   "devDependencies": {
     "mocha": "^2.2.5"
