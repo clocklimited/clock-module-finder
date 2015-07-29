@@ -1,16 +1,17 @@
 var GitHubApi = require('github')
+  , passwords = require('./passwords.json')
 
 var github = new GitHubApi({
   version: '3.0.0'
 })
 
 github.authenticate({
-  type: 'token',
-  token: '03e1c61ed78b2420026f593ca7f6054850950ec0'
+  type: 'token'
+, token: passwords.token 
 })
 
 github.orgs.getMembers({
-  org: 'clocklimited'
+  org: 'clocklimited' // Team Clock
 }, function (err, res) {
   if (!err) {
     for(var i = 0; i < res.length; i++) {
@@ -22,9 +23,9 @@ github.orgs.getMembers({
 })
 
 github.orgs.getTeamRepos({
-  per_page: 100,
-  page: 1,
-  id: '152302' // Clocklimited's 'Clock' team ID
+  per_page: 100
+, page: 1
+, id: '152302' // Clocklimited's 'Clock' team ID
 }, function(err, res) {
   if (!err) {
     for(var i = 0; i < res.length; i++) {
@@ -36,9 +37,9 @@ github.orgs.getTeamRepos({
 }) 
 
 github.repos.getFromUser({
-  per_page: 100,
-  page: 1,
-  user: 'maael' 
+  per_page: 100
+, page: 1
+, user: 'maael' 
 }, function(err, res) {
   if (!err) {
     for(var i = 0; i < res.length; i++) {
@@ -50,9 +51,9 @@ github.repos.getFromUser({
 }) 
 
 github.repos.getContent({
-  user: 'bag-man',
-  repo: 'nodeup',
-  path: 'package.json'
+  user: 'bag-man'
+, repo: 'nodeup'
+, path: 'package.json'
 }, function(err, res) {
   if (!err) {
     console.log(res)
