@@ -1,12 +1,11 @@
-var mocha = require('mocha')
-  , assert = require('assert')
+var assert = require('assert')
   , api = require('../api')()
 
 describe('module-finder', function() {
 
   describe('#getClockMembers', function() {
     it('should get the list of current Clock members', function(done) {
-      api.getOrgMembers('clocklimited', function (members) {
+      api.getOrgMembers({ org: 'clocklimited' }, function (members) {
         assert.equal((typeof members), 'object')
         assert.equal(members.length > 0, true)
         assert.equal(typeof members[0], 'object')
@@ -20,9 +19,9 @@ describe('module-finder', function() {
       // TODO: Implement include lists
       var includeList = ['maael']
 
-      api.getOrgMembers('clocklimited', function (members) {
+      api.getOrgMembers({ org: 'clocklimited' }, function (members) {
         var includedMembers = members.filter(function (member) {
-          return excludeList.indexOf(member.login) > -1
+          return includeList.indexOf(member.login) > -1
         });
 
         assert.equal(includeList.length, includedMembers.length, 'Included members aren\'t returned')
@@ -46,8 +45,8 @@ describe('module-finder', function() {
 
   describe('#getClockRepos', function() {
     it('should get the full list of Clock repos', function(done) {
-      this.timeout(0)
-      api.getTeamRepos({teamId: '152302'}, function(repos) {
+      this.timeout(5000)
+      api.getTeamRepos({ teamId: '152302' }, function(repos) {
         assert.equal(typeof repos, 'object', 'Repo list is an object')
         assert.equal(repos.length > 0, true, 'Repo list has repos in it')
         done()
