@@ -1,6 +1,7 @@
 var assert = require('assert')
   , api = require('../api')()
   , finder = require('../finder')()
+  , moduleFinder = require('../')()
 
 describe('module-finder', function() {
 
@@ -98,6 +99,19 @@ describe('module-finder', function() {
       api.getRepos({ user: 'tj' }, function(err, repos) {
         assert.equal(repos.length > 100, true, 'Has used multiple pages')
         done()
+      })
+    })
+  })
+
+})
+
+describe('moduleFinder', function () {
+  describe('#findModules', function () {
+    it('should find modules', function (done) {
+      this.timeout(0)
+      moduleFinder.findModules(function (err, modules) {
+        console.log(err)
+        console.log(modules)
       })
     })
   })
