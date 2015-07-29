@@ -23,9 +23,9 @@ module.exports = function () {
 
         if(err) throw new Error('Could not get possible packages')
 
-        finder.getGetClockMemberList(function (err, members) {
+        finder.getClockMemberList(function (err, members) {
 
-          function memberPackages(elememnt) {
+          function memberPackages(element) {
             var repoUrlParts = element.split('/')
               , repoUser = repoUrlParts[repoUrlParts.length - 2]
             return members.indexOf(repoUser) > -1
