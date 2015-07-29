@@ -72,4 +72,14 @@ describe('module-finder', function() {
       })
     })
   })
+
+  describe('#getUserRepos', function() {
+    it.skip('should get the full list of substack\'s repos', function(done) {
+      this.timeout(0)
+      api.getRepos({ user: 'substack' }, function(repos) {
+        assert.equal(repos.length > 100, true, 'Has used multiple pages')
+        done()
+      })
+    })
+  })
 })

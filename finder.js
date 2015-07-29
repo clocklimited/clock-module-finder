@@ -36,8 +36,38 @@ function finder () {
     })
   }
 
+  function getDependencies(options, cb) {
+    api.getPackageJson(options, function(err, res) {
+      if (err || !res.content) {
+        console.log('No package.json in ' + options.user + '/' + options.repo)
+        return cb(err)
+      } else {
+        var data = JSON.parse(new Buffer(res.content, 'base64').toString())
+        , dependencies = []
+        if (data.dependencies) dependencies = dependencies.concat(Object.keys(data.dependencies))
+        if (data.devDependencies) dependencies = dependencies.concat(Object.keys(data.devDependencies))
+        cb(null, dependencies)
+      }
+    })
+  }
+
   return {
     getUniqueClockRepos: getUniqueClockRepos
   , getClockMembersList: getClockMembersList
+  , getDependencies: getDependencies
   }
 }
+
+finder().getDependencies({
+  user: 'maael'
+, repo: 'gw2-api-wrapper'
+}, function(res) {
+  console.log(res)
+});
+
+finder().getDependencies({
+  user: 'bag-man'
+, repo: 'process-game'
+}, function(res) {
+  console.log(res)
+});

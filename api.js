@@ -6,52 +6,53 @@ module.exports = function() {
     version: '3.0.0'
   })
 
-  github.authenticate({
-    type: 'token'
-  , token: passwords.token 
-  }) 
+  github.authenticate({ type: 'token', token: passwords.token }) 
 
   function getOrgMembers(options, cb) {
-    options = options || {};
+    options = options || {}
     options.data = options.data || []
     options.pageNumber = options.pageNumber || 1
-    if(!options.org) throw new Error('Need an organisation name to get members list')
-    github.orgs.getMembers({
-      org: options.org
-    , page: options.pageNumber
-    , per_page: 100
-    }, function (err, res) {
-      if(err) throw new Error('Could not get org members')
-      options.data = options.data.concat(res)
-      if(res.length === 100) {
-        getNextPage(options, getOrgMembers, cb)
-      } else {
-        cb(options.data)
+    if (!options.org) throw new Error('Need an organisation name to get members list')
+    github.orgs.getMembers(
+      { org: options.org
+      , page: options.pageNumber
+      , per_page: 100
+      } 
+    , function (err, res) {
+        if (err) return cb(err)
+        options.data = options.data.concat(res)
+        if (res.length === 100) {
+          getNextPage(options, getOrgMembers, cb)
+        } else {
+          cb(null, options.data)
+        }
       }
-    })
+    )
   }
 
   function getRepos(options, cb) {
     function handleResponse(err, res) {
-      if(err) throw new Error('Could not get repos')
+      if (err) return cb(err)
       options.data = options.data.concat(res)
-      if(res.length === 100) {
+      if (res.length === 100) {
         getNextPage(options, getRepos, cb)
       } else {
-        cb(options.data)
+        cb(null, options.data)
       }      
     }
 
     options = options || {}
     options.data = options.data || []
-    if(!options.user && !options.teamId) throw new Error('Need a username or team id to get repos')
+    if (!options.user && !options.teamId) {
+      return cb(new Error('Need a username or team id to get repos'))
+    }
     options.pageNumber = options.pageNumber || 1
 
-    var githubOptions = {
-      page: options.pageNumber
-    , per_page: 100
-    }
-    if(options.teamId) {
+    var githubOptions = 
+        { page: options.pageNumber
+        , per_page: 100
+        }
+    if (options.teamId) {
       githubOptions.id = options.teamId
       github.orgs.getTeamRepos(githubOptions, handleResponse)
     } else {
@@ -62,15 +63,16 @@ module.exports = function() {
 
   function getPackageJson(options, cb) {
     options = options || {}
-    if(!options.user || !options.repo) throw new Error('Need a username and repo to get package.json')
-    github.repos.getContent({
-      user: options.user
-    , repo: options.repo
-    , path: 'package.json'
-    }, function(err, res) {
-      if(err) throw new Error('Could not check for package.json')
-      cb(res)
-    }) 
+    if (!options.user || !options.repo) {
+      return cb(new Error('Need a username and repo to get package.json'))
+    }
+    github.repos.getContent(
+      { user: options.user
+      , repo: options.repo
+      , path: 'package.json'
+      } 
+    , cb 
+    ) 
   }
 
   function getNextPage(options, returnFunction, cb) {
