@@ -3,7 +3,6 @@ var finder = require('./finder')()
   , async = require('async')
   , npm = require('npm')
 
-
 module.exports = function (options) {
 
   options = options || {}
@@ -53,14 +52,22 @@ module.exports = function (options) {
     )
   }
 
-  function findModules(cb) {
+  function findModules(options, cb) {
+    options = options || {}
+    options.includeList = options.includeList || []
+
     async.parallel(
       { packages: getPackages
       , members: finder.getClockMembersList
       }
     , function(err, res) {
         console.log(res)
-        cb(null, res)
+        res.members = res.members.concat(options.includeList)
+        var userModules = res.packages.filter(function(pack) {
+          return (res.members.indexOf(pack.user) > -1)
+        })
+        console.log(userModules)
+        cb(null, userModules)
       }
     )
   }
