@@ -48,7 +48,8 @@ module.exports = function () {
   function getDependencies(options, cb) {
     api.getPackageJson(options, function (err, res) {
       if (err || !res.content) {
-        return cb(new Error('No package.json in ' + options.user + '/' + options.repo))
+        // return cb(new Error('No package.json in ' + options.user + '/' + options.repo))
+        return cb(null,[])
       } else {
         var data = JSON.parse(new Buffer(res.content, 'base64').toString())
         , dependencies = []

@@ -64,7 +64,8 @@ module.exports = function() {
   function getPackageJson(options, cb) {
     options = options || {}
     if (!options.user || !options.repo) {
-      return cb(new Error('Need a username and repo to get package.json'))
+      // return cb(new Error('Need a username and repo to get package.json'))
+      return cb(null, [])
     }
     github.repos.getContent(
       { user: options.user
