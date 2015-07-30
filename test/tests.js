@@ -132,8 +132,8 @@ describe('moduleFinder', function () {
   describe('#findModules', function () {
     it('should find modules', function (done) {
       this.timeout(0)
-      moduleFinder.findModules(function (err, modules) {
-        assert.deepEqual(typeof modules, 'array', 'Modules was not an array')
+      moduleFinder.findModules({includeList: ['request']}, function (err, modules) {
+        console.log(modules)
         assert.equal(modules.length > 0, true, 'Modules has no elements')
         done()
       })
