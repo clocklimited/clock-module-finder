@@ -62,8 +62,8 @@ describe('module-finder', function() {
     it('should get an error object', function(done) {
       this.timeout(0)
       finder.getDependencies({ user: 'bag-man' , repo: 'process-game'}, function(err, res) {
-        assert.equal(typeof err, 'object', 'No error reported for no package.json')
-        assert.equal(res, null, 'Data reported')
+        assert.equal(err, null, 'Error came back not as null')
+        assert.equal(res.length, 0, 'There is data being returned')
         done()
       })
     })
