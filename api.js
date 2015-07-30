@@ -82,12 +82,21 @@ module.exports = function() {
     returnFunction(options, cb)
   }
 
+  function getParts(url) {
+    var parts = url.split('github.com')[1].substring(1).split('/');
+    parts[1] = parts[1].split('.git')[0];
+    return parts;
+  }
+
   function getPackageRepo(packageName, cb) {
     npm.commands.view([packageName, 'repository.url'], true, function(err, res) {
       if (!res || Object.keys(res).length === 0) return cb(null, {packageName: packageName, user: '', url: ''})
       var url = res[Object.keys(res)[0]]['repository.url']
-       , user = url.split('/')[3] 
-      cb(null, {packageName: packageName, user: user, url: url})
+        , urlParts = getParts(url)
+        , user = urlParts[0]
+        , repo = urlParts[1]
+
+      cb(null, { packageName: packageName, user: user, url: url, repo: repo })
     })
   }
 
