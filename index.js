@@ -9,9 +9,11 @@ module.exports = function (options) {
   options.includeList = options.includeList || []
 
   var depStats = null
+    , stats = {}
 
   function countDependencies(deps) {
     var depsList = deps.reduce(function (list, repoDeps) {
+      stats.uncountedDeps = (stats.uncountedDeps ? stats.uncountedDeps + repoDeps.length : repoDeps.length)
       for (var i = 0; i < repoDeps.length; i++) {
         var repo = repoDeps[i]
         list[repo] = (list[repo] ? list[repo] + 1 : 1)
@@ -25,9 +27,14 @@ module.exports = function (options) {
   function getDependenciesStats(cb) {
     finder.getUniqueClockRepos(function (err, repos) {
       if (err) return cb(err)
+      stats.checkedRepos = repos.length
       async.map(repos, finder.getDependencies, function (err, deps) {
         if (err) return cb(err)
+        console.log(deps.length)
         var depsList = countDependencies(deps)
+        stats.countedDeps = Object.keys(depsList).length
+        console.log(depsList)
+        console.log(Object.keys(depsList).length)
         depStats = depsList
         return cb(null, depsList)
       })
@@ -62,6 +69,7 @@ module.exports = function (options) {
       }
     , function(err, res) {
         res.members = res.members.concat(options.includeList)
+        stats.numberOfMembers = res.members.length
         var userModules = res.packages.filter(function(pack) {
           return (res.members.indexOf(pack.user) > -1)
         })
@@ -69,21 +77,36 @@ module.exports = function (options) {
           element.count = depStats[element.packageName]
           return element
         })
+        stats.filteredModules = userModules.length
         cb(null, userModules)
       }
     )
   }
 
   function showReport(err, res) {
-    console.log('Generating report')
+    console.log('# Clock npm package leaderboard\n')
     if (err) return 
     for(var i = 0; i < res.length; i++) {
-      console.log('Package Name: ' + res[i].packageName)
+      if (res[i].user === 'clocklimited') continue
+      // Remove git+, git:, .git from URLs
+      var url = res[i].url.split('/').splice(-3).join('/')
+      url = url.split('.git')[0]
+
+      console.log(
+        '[' + res[i].user + '/' + 
+        res[i].packageName + '](https://' + url + ') has been used ' 
+        + res[i].count + ' times.'
+      )
     }
+  }
+
+  function getStats () {
+    return stats
   }
 
   return {
     findModules: findModules
     , showReport: showReport
+    , getStats: getStats
   }
 }

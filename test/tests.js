@@ -5,7 +5,7 @@ var assert = require('assert')
   , npm = require('npm')
 
 /* Uncomment / comment for offline / online tests */
-require('./nockSetup.js')()
+// require('./nockSetup.js')()
 
 describe('api', function () {
   describe('#getOrgMembers', function () {
