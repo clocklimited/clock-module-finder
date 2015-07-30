@@ -65,6 +65,10 @@ module.exports = function (options) {
         var userModules = res.packages.filter(function(pack) {
           return (res.members.indexOf(pack.user) > -1)
         })
+        .map(function(element) {
+          element.count = depStats[element.packageName]
+          return element
+        })
         cb(null, userModules)
       }
     )
