@@ -13,8 +13,8 @@ module.exports = function (options) {
   function countDependencies(deps) {
     var depsList = deps.reduce(function (list, repoDeps) {
       for (var i = 0; i < repoDeps.length; i++) {
-        var listedDep = list[repoDeps[i]]
-        listedDep = (listedDep ? listedDep + 1 : 1)
+        var repo = repoDeps[i]
+        list[repo] = (list[repo] ? list[repo] + 1 : 1)
       }
       return list
     }, {})
