@@ -83,7 +83,8 @@ module.exports = function() {
   }
 
   function getParts(url) {
-    var parts = url.split('github.com')[1].substring(1).split('/');
+    var host = (url.indexOf('bitbucket.org') > -1 ? 'bitbucket.org' : 'github.com')
+      , parts = url.split(host)[1].substring(1).split('/');
     parts[1] = parts[1].split('.git')[0];
     return parts;
   }

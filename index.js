@@ -86,14 +86,11 @@ module.exports = function (options) {
     if (err) return 
     for(var i = 0; i < res.length; i++) {
       if (res[i].user === 'clocklimited') continue
-      // Remove git+, git:, .git from URLs
-      var url = res[i].url.split('/').splice(-3).join('/')
-      url = url.split('.git')[0]
-        report += '[' + + res[i].user + '/' + res[i].packageName + ']'
-        report += '(https://' + url + ') has been used ' + res[i].count + ' times.'
-        report += '\n'
-      )
+      report += '[' + res[i].user + '/' + res[i].packageName + ']'
+      report += '(https://github.com/' + res[i].user + '/' + res[i].repo + ') has been used ' + res[i].count + ' times.'
+      report += '\n'
     }
+    console.log(report)
   }
 
   function getStats () {
