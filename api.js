@@ -84,6 +84,7 @@ module.exports = function() {
 
   function getPackageRepo(packageName, cb) {
     npm.commands.view([packageName, 'repository.url'], true, function(err, res) {
+      if (!res || Object.keys(res).length === 0) return cb(null, {packageName: packageName, user: '', url: ''})
       var url = res[Object.keys(res)[0]]['repository.url']
        , user = url.split('/')[3] 
       cb(null, {packageName: packageName, user: user, url: url})

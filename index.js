@@ -30,11 +30,8 @@ module.exports = function (options) {
       stats.checkedRepos = repos.length
       async.map(repos, finder.getDependencies, function (err, deps) {
         if (err) return cb(err)
-        console.log(deps.length)
         var depsList = countDependencies(deps)
         stats.countedDeps = Object.keys(depsList).length
-        console.log(depsList)
-        console.log(Object.keys(depsList).length)
         depStats = depsList
         return cb(null, depsList)
       })
