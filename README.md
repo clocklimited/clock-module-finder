@@ -1,4 +1,8 @@
 # clock-module-finder
-A package to count the number of times a clock employee's package has been used 
+A package to count the number of times a clock employee's package has been used.
+
+Generate a personal access token, ensure that you are a member of the teams / organisation that you wish to check.
+
+When generating your key, ensure that it has permissions to repo and read:org. 
 
 Rename examplepasswords.json to passwords.json, and edit it to include your token.
