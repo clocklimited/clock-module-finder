@@ -3,19 +3,32 @@ var finder = require('./finder')()
   , async = require('async')
   , npm = require('npm')
 
+module.exports = function (options) {
 
-module.exports = function() {
+  options = options || {}
+  options.includeList = options.includeList || []
+
+  var depStats = null
+
+  function countDependencies(deps) {
+    var depsList = deps.reduce(function (list, repoDeps) {
+      for (var i = 0; i < repoDeps.length; i++) {
+        var repo = repoDeps[i]
+        list[repo] = (list[repo] ? list[repo] + 1 : 1)
+      }
+      return list
+    }, {})
+
+    return depsList;
+  }
+
   function getDependenciesStats(cb) {
     finder.getUniqueClockRepos(function (err, repos) {
       if (err) return cb(err)
       async.map(repos, finder.getDependencies, function (err, deps) {
         if (err) return cb(err)
-        var depsList = deps.reduce(function (list, repoDeps) {
-          for (var i = 0; i < repoDeps.length; i++) {
-            list[repoDeps[i]] ? list[repoDeps[i]] += 1 : list[repoDeps[i]] = 1
-          }
-          return list
-        }, {})
+        var depsList = countDependencies(deps)
+        depStats = depsList
         return cb(null, depsList)
       })
     })
