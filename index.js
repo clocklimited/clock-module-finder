@@ -6,28 +6,35 @@ var finder = require('./finder')()
 
 module.exports = function () {
 
-  function getDependenciesStats (cb) {
+  function getDependenciesStats(cb) {
     finder.getUniqueClockRepos(function (err, repos) {
       async.map(repos, finder.getDependencies, function (err, deps) {
-        if (err) return cb(err)
+        if (err) return cb(null, err)
         var depsList = deps.reduce(function (list, repoDeps) {
           for (var i = 0; i < repoDeps.length; i++) {
             list[repoDeps[i]] ? list[repoDeps[i]] += 1 : list[repoDeps[i]] = 1
           }
           return list
         }, {})
-        return cb(null, depsList)
+        return cb(null, null, depsList)
       })
     })
   }
 
+  function loadNPM(err, deps, cb) {
+    npm.load({}, function(){
+      cb(err, deps)
+    }) 
+  }
+
   function findModules(cb) {
 
-    async.series({
-      getDependenciesStats,
-      loadNPM
+    async.waterfall([
+      getDependenciesStats
+    , loadNPM
+    ], function (err, results) {
+      console.log(results)
     })
-    getDependenciesStats(cb)
 
 
       //   possiblePackages.concat(finder.getDependencies(options, callback))
@@ -54,14 +61,6 @@ module.exports = function () {
       //   })
 
       // })
-    })
-
-    npm.load({}, function(){
-      api.getPackageRepo('express', function(err, res) {
-        console.log(res.user)
-        console.log(res.url)
-      })
-    }) 
   }
 
   function showReport() {
