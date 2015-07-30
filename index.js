@@ -8,62 +8,48 @@ module.exports = function () {
 
   function getDependenciesStats(cb) {
     finder.getUniqueClockRepos(function (err, repos) {
+      if (err) return cb(err)
       async.map(repos, finder.getDependencies, function (err, deps) {
-        if (err) return cb(null, err)
+        if (err) return cb(err)
         var depsList = deps.reduce(function (list, repoDeps) {
           for (var i = 0; i < repoDeps.length; i++) {
             list[repoDeps[i]] ? list[repoDeps[i]] += 1 : list[repoDeps[i]] = 1
           }
           return list
         }, {})
-        return cb(null, null, depsList)
+        return cb(null, depsList)
       })
     })
   }
 
-  function loadNPM(err, deps, cb) {
+  function loadNPM(deps, cb) {
     npm.load({}, function(){
-      cb(err, deps)
+      cb(null, deps)
     }) 
   }
 
+  function getPackages(cb){ 
+    async.waterfall(
+      [ getDependenciesStats
+      , loadNPM
+      ]
+    , function (err, results) {
+        if (err) return cb(err)
+        async.map(Object.keys(results), api.getPackageRepo, cb)
+      }
+    )
+  }
+
   function findModules(cb) {
-
-    async.waterfall([
-      getDependenciesStats
-    , loadNPM
-    ], function (err, results) {
-      async.map(Object.keys(results), api.getPackageRepo, function(err, res) {
+    async.parallel(
+      { packages: getPackages
+      , members: finder.getClockMembersList
+      }
+    , function(err, res) {
         console.log(res)
-      })
-    })
-
-
-
-      //   possiblePackages.concat(finder.getDependencies(options, callback))
-
-      // }, function(err) {
-      //   console.log(2, err)
-
-      //   //TODO Handle getDependecies error
-      //   //if(err) cb(new Error('Could not get possible packages'))
-
-      //   finder.getClockMembersList(function (err, members) {
-
-      //     function memberPackages(element) {
-      //       var repoUrlParts = element.split('/')
-      //         , repoUser = repoUrlParts[repoUrlParts.length - 2]
-      //       return members.indexOf(repoUser) > -1
-      //     }
-
-      //     actualPackages = possiblePackages.filter(memberPackages)
-      //     console.log(3, possiblePackages)
-
-      //     cb(null, actualPackages)
-        
-      //   })
-
-      // })
+        cb(null, res)
+      }
+    )
   }
 
   function showReport() {
