@@ -81,18 +81,17 @@ module.exports = function (options) {
   }
 
   function showReport(err, res) {
-    console.log('# Clock npm package leaderboard\n')
+    var report = ''
+    report += '# Clock npm package leaderboard\n'
     if (err) return 
     for(var i = 0; i < res.length; i++) {
       if (res[i].user === 'clocklimited') continue
       // Remove git+, git:, .git from URLs
       var url = res[i].url.split('/').splice(-3).join('/')
       url = url.split('.git')[0]
-
-      console.log(
-        '[' + res[i].user + '/' + 
-        res[i].packageName + '](https://' + url + ') has been used ' 
-        + res[i].count + ' times.'
+        report += '[' + + res[i].user + '/' + res[i].packageName + ']'
+        report += '(https://' + url + ') has been used ' + res[i].count + ' times.'
+        report += '\n'
       )
     }
   }
