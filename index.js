@@ -1,5 +1,8 @@
 var finder = require('./finder')()
+  , api = require('./api.js')()
   , async = require('async')
+  , npm = require('npm')
+
 
 module.exports = function () {
 
@@ -52,6 +55,13 @@ module.exports = function () {
 
       // })
     })
+
+    npm.load({}, function(){
+      api.getPackageRepo('express', function(err, res) {
+        console.log(res.user)
+        console.log(res.url)
+      })
+    }) 
   }
 
   function showReport() {

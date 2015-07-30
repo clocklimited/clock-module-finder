@@ -1,5 +1,6 @@
 var GitHubApi = require('github')
   , passwords = require('./passwords.json')
+  , npm = require('npm')
 
 module.exports = function() {
   var github = new GitHubApi({
@@ -81,25 +82,19 @@ module.exports = function() {
     returnFunction(options, cb)
   }
 
-  // To be moved later
-  /*
-  , npm = require('npm')
-
-  npm.load({}, function(){
-    getPackageRepo({packageName: 'express'}) 
-  }) 
-
-  function getPackageRepo(options) {
-    npm.commands.view([options.packageName, 'repository.url'], true, function(err, res) {
-      console.log(res[Object.keys(res)[0]]['repository.url'])
+  function getPackageRepo(packageName, cb) {
+    npm.commands.view([packageName, 'repository.url'], true, function(err, res) {
+      var url = res[Object.keys(res)[0]]['repository.url']
+       , user = url.split('/')[3] 
+      cb(null, {user: user, url: url})
     })
   }
-  */
 
   return {
     getOrgMembers: getOrgMembers
   , getRepos: getRepos
   , getPackageJson: getPackageJson
+  , getPackageRepo: getPackageRepo
   }
 
 }
