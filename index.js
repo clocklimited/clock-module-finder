@@ -81,12 +81,15 @@ module.exports = function (options) {
   }
 
   function showReport(err, res) {
+    res.sort(function(a, b) { 
+      return b.count - a.count;
+    })
     var report = ''
     report += '# Clock npm package leaderboard\n'
     if (err) return 
     for(var i = 0; i < res.length; i++) {
       if (res[i].user === 'clocklimited') continue
-      report += '[' + res[i].user + '/' + res[i].packageName + ']'
+      report += '* [' + res[i].user + '/' + res[i].packageName + ']'
       report += '(https://github.com/' + res[i].user + '/' + res[i].repo + ') has been used ' + res[i].count + ' times.'
       report += '\n'
     }
