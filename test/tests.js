@@ -4,7 +4,7 @@ var assert = require('assert')
   , moduleFinder = require('../')()
 
 /* Uncomment / comment for offline / online tests */
-require('./nockSetup.js')()
+// require('./nockSetup.js')()
 
 describe('module-finder', function() {
 
