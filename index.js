@@ -2,23 +2,30 @@ var finder = require('./finder')()
   , async = require('async')
 
 module.exports = function () {
-  function findModules(cb) {
 
-    var actualPackages = []
-
+  function getDependenciesStats (cb) {
     finder.getUniqueClockRepos(function (err, repos) {
-
-      var possiblePackages = []
-        , options
-
       async.map(repos, finder.getDependencies, function (err, deps) {
+        if (err) return cb(err)
         var depsList = deps.reduce(function (list, repoDeps) {
           for (var i = 0; i < repoDeps.length; i++) {
             list[repoDeps[i]] ? list[repoDeps[i]] += 1 : list[repoDeps[i]] = 1
           }
           return list
         }, {})
+        return cb(null, depsList)
       })
+    })
+  }
+
+  function findModules(cb) {
+
+    async.series({
+      getDependenciesStats,
+      loadNPM
+    })
+    getDependenciesStats(cb)
+
 
       //   possiblePackages.concat(finder.getDependencies(options, callback))
 
