@@ -27,7 +27,10 @@ module.exports = function (options) {
       if (err) return cb(err)
       async.map(repos, finder.getDependencies, function (err, deps) {
         if (err) return cb(err)
+        console.log(deps.length)
         var depsList = countDependencies(deps)
+        console.log(depsList)
+        console.log(Object.keys(depsList).length)
         depStats = depsList
         return cb(null, depsList)
       })
@@ -78,12 +81,14 @@ module.exports = function (options) {
     console.log('# Clock npm package leaderboard\n')
     if (err) return 
     for(var i = 0; i < res.length; i++) {
-      if (res[i].url[0] === 'g') {
-        res[i].url = res[i].url.slice(4)
-      } 
+      if (res[i].user === 'clocklimited') continue
+      // Remove git+, git:, .git from URLs
+      var url = res[i].url.split('/').splice(-3).join('/')
+      url = url.split('.git')[0]
+
       console.log(
         '[' + res[i].user + '/' + 
-        res[i].packageName + '](' + res[i].url + ') has been used ' 
+        res[i].packageName + '](https://' + url + ') has been used ' 
         + res[i].count + ' times.'
       )
     }
