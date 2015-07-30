@@ -33,8 +33,11 @@ module.exports = function () {
       getDependenciesStats
     , loadNPM
     ], function (err, results) {
-      console.log(results)
+      async.map(Object.keys(results), api.getPackageRepo, function(err, res) {
+        console.log(res)
+      })
     })
+
 
 
       //   possiblePackages.concat(finder.getDependencies(options, callback))
@@ -69,5 +72,6 @@ module.exports = function () {
 
   return {
     findModules: findModules
+    , showReport: showReport
   }
 }

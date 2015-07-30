@@ -86,7 +86,7 @@ module.exports = function() {
     npm.commands.view([packageName, 'repository.url'], true, function(err, res) {
       var url = res[Object.keys(res)[0]]['repository.url']
        , user = url.split('/')[3] 
-      cb(null, {user: user, url: url})
+      cb(null, {packageName: packageName, user: user, url: url})
     })
   }
 
