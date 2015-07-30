@@ -18,7 +18,7 @@ module.exports = function () {
         language = (repo.language === 'JavaScript' || repo.language === null)
         if (notInList && language) {
           list.push({
-            login: repo.owner.login
+            user: repo.owner.login
           , repo: repo.name
           })
         }
