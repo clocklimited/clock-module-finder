@@ -12,7 +12,12 @@ module.exports = function () {
         , options
 
       async.map(repos, finder.getDependencies, function (err, deps) {
-        //deps is array of deps arrays
+        var depsList = deps.reduce(function (list, repoDeps) {
+          for (var i = 0; i < repoDeps.length; i++) {
+            list[repoDeps[i]] ? list[repoDeps[i]] += 1 : list[repoDeps[i]] = 1
+          }
+          return list
+        }, {})
       })
 
       //   possiblePackages.concat(finder.getDependencies(options, callback))
