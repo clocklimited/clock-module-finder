@@ -11,10 +11,8 @@ module.exports = function () {
       var possiblePackages = []
         , options
 
-      console.log(1, repos)
       async.map(repos, finder.getDependencies, function (err, deps) {
-        console.log(err)
-        console.log(deps)
+        //deps is array of deps arrays
       })
 
       //   possiblePackages.concat(finder.getDependencies(options, callback))

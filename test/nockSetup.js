@@ -20,6 +20,13 @@ module.exports = function() {
   .get('/repos/maael/gw2-api-wrapper/contents/package.json')
   .replyWithFile(200, __dirname + '/responses/package.json')
 
+
+  nock('https://api.github.com')
+  .defaultReplyHeaders({'Content-Type': 'application/json'})
+  .get('/teams/152302/repos')
+  .query({page: 1, 'per_page': 100})
+  .replyWithFile(200, __dirname + '/responses/clock_repos.json')
+
   nock('https://api.github.com')
   .defaultReplyHeaders({'Content-Type': 'application/json'})
   .persist()
