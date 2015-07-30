@@ -133,10 +133,19 @@ describe('moduleFinder', function () {
     it('should find modules', function (done) {
       this.timeout(0)
       moduleFinder.findModules({includeList: ['request']}, function (err, modules) {
-        console.log(modules)
         assert.equal(modules.length > 0, true, 'Modules has no elements')
         done()
       })
+    })
+  })
+})
+
+describe('showReport', function () {
+  describe('#showReport', function () {
+    it('should display report of data', function (done) {
+      this.timeout(0)
+      moduleFinder.findModules({includeList: ['request']}, finder.showReport) 
+      done()
     })
   })
 })

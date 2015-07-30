@@ -48,19 +48,24 @@ module.exports = function() {
       , members: finder.getClockMembersList
       }
     , function(err, res) {
-        console.log(res)
         res.members = res.members.concat(options.includeList)
         var userModules = res.packages.filter(function(pack) {
           return (res.members.indexOf(pack.user) > -1)
         })
-        console.log(userModules)
         cb(null, userModules)
       }
     )
   }
 
-  function showReport() {
-
+  function showReport(err, res) {
+    console.log('Generating report')
+    console.log(err)
+    console.log(res)
+    if (err) return 
+    for(var pack in res) {
+      console.log('Package Name: ' + pack.packageName)
+    }
+    console.log(res)
   }
 
   return {
