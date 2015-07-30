@@ -72,13 +72,10 @@ module.exports = function (options) {
 
   function showReport(err, res) {
     console.log('Generating report')
-    console.log(err)
-    console.log(res)
     if (err) return 
-    for(var pack in res) {
-      console.log('Package Name: ' + pack.packageName)
+    for(var i = 0; i < res.length; i++) {
+      console.log('Package Name: ' + res[i].packageName)
     }
-    console.log(res)
   }
 
   return {

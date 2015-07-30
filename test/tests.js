@@ -144,7 +144,7 @@ describe('showReport', function () {
   describe('#showReport', function () {
     it('should display report of data', function (done) {
       this.timeout(0)
-      moduleFinder.findModules({includeList: ['request']}, finder.showReport) 
+      moduleFinder.findModules({includeList: ['request']}, moduleFinder.showReport) 
       done()
     })
   })
