@@ -75,15 +75,15 @@ module.exports = function (options) {
   }
 
   function showReport(err, res) {
-    console.log('# Clock npm package leaderboard\n\n')
+    console.log('# Clock npm package leaderboard\n')
     if (err) return 
     for(var i = 0; i < res.length; i++) {
       if (res[i].url[0] === 'g') {
         res[i].url = res[i].url.slice(4)
       } 
       console.log(
-        '(' + res[i].url + ')[' + res[i].user + '/' + 
-        res[i].packageName + '] has been used ' 
+        '[' + res[i].user + '/' + 
+        res[i].packageName + '](' + res[i].url + ') has been used ' 
         + res[i].count + ' times.'
       )
     }
