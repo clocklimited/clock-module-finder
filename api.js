@@ -2,6 +2,8 @@ var GitHubApi = require('github')
   , passwords = process.env.GITHUB || require('./passwords.json')
   , npm = require('npm')
 
+  console.log(process.env)
+
 module.exports = function() {
   var github = new GitHubApi({
     version: '3.0.0'
