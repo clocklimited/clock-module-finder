@@ -20,7 +20,6 @@ module.exports = function (options) {
       }
       return list
     }, {})
-
     return depsList;
   }
 
