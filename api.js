@@ -47,15 +47,17 @@ module.exports = function() {
 
     options = options || {}
     options.data = options.data || []
+
     if (!options.user && !options.teamId) {
       return cb(new Error('Need a username or team id to get repos'))
     }
-    options.pageNumber = options.pageNumber || 1
 
+    options.pageNumber = options.pageNumber || 1
     var githubOptions =
         { page: options.pageNumber
         , 'per_page': 100 // To adhere to JShintrc
         }
+
     if (options.teamId) {
       githubOptions.id = options.teamId
       github.orgs.getTeamRepos(githubOptions, handleResponse)
@@ -99,7 +101,6 @@ module.exports = function() {
         , urlParts = getParts(url)
         , user = urlParts[0]
         , repo = urlParts[1]
-
       cb(null, { packageName: packageName, user: user, url: url, repo: repo })
     })
   }
@@ -110,5 +111,4 @@ module.exports = function() {
   , getPackageJson: getPackageJson
   , getPackageRepo: getPackageRepo
   }
-
 }
