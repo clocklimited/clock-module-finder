@@ -1,5 +1,5 @@
 var GitHubApi = require('github')
-  , passwords = require('./passwords.json')
+  , passwords = process.env.GITHUB || require('./passwords.json')
   , npm = require('npm')
 
 module.exports = function() {
