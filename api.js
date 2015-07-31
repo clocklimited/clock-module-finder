@@ -7,7 +7,7 @@ module.exports = function() {
     version: '3.0.0'
   })
 
-  github.authenticate({ type: 'token', token: passwords.token }) 
+  github.authenticate({ type: 'token', token: passwords.token })
 
   function getOrgMembers(options, cb) {
     options = options || {}
@@ -18,8 +18,8 @@ module.exports = function() {
       { org: options.org
       , page: options.pageNumber
       , 'per_page': 100 // To adhere to JShintrc
-      } 
-    , function (err, res) {
+      }
+      , function (err, res) {
         if (err) return cb(err)
         options.data = options.data.concat(res)
         if (res.length === 100) {
@@ -39,7 +39,7 @@ module.exports = function() {
         getNextPage(options, getRepos, cb)
       } else {
         cb(null, options.data)
-      }      
+      }
     }
 
     options = options || {}
@@ -49,7 +49,7 @@ module.exports = function() {
     }
     options.pageNumber = options.pageNumber || 1
 
-    var githubOptions = 
+    var githubOptions =
         { page: options.pageNumber
         , 'per_page': 100 // To adhere to JShintrc
         }
@@ -72,9 +72,9 @@ module.exports = function() {
       { user: options.user
       , repo: options.repo
       , path: 'package.json'
-      } 
-    , cb 
-    ) 
+      }
+    , cb
+    )
   }
 
   function getNextPage(options, returnFunction, cb) {
@@ -90,8 +90,8 @@ module.exports = function() {
   }
 
   function getPackageRepo(packageName, cb) {
-    npm.commands.view([packageName, 'repository.url'], true, function(err, res) {
-      if (!res || Object.keys(res).length === 0) return cb(null, {packageName: packageName, user: '', url: ''})
+    npm.commands.view([ packageName, 'repository.url' ], true, function(err, res) {
+      if (!res || Object.keys(res).length === 0) return cb(null, { packageName: packageName, user: '', url: '' })
       var url = res[Object.keys(res)[0]]['repository.url']
         , urlParts = getParts(url)
         , user = urlParts[0]
