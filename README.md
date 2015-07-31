@@ -1,6 +1,7 @@
 # clock-module-finder
 
-[![Build Status](https://img.shields.io/travis/clocklimited/clock-module-finder/master.svg?style=flat-square)][![Dependencies](https://img.shields.io/david/primus/primus.svg?style=flat-square)](https://david-dm.org/clocklimited/clock-module-finder)
+[![Build Status](https://img.shields.io/travis/clocklimited/clock-module-finder/master.svg?style=flat-square)](https://travis-ci.org/clocklimited/clock-module-finder)
+[![Dependencies Status](https://img.shields.io/david/clocklimited/clock-module-finder.svg?style=flat-square)](https://david-dm.org/clocklimited/clock-module-finder)
 
 A package to count the number of times a clock employee's package has been used.
 
