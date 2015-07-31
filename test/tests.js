@@ -10,7 +10,7 @@ var assert = require('assert')
 describe('api', function () {
   describe('#getOrgMembers', function () {
     // Skipped as there is not a nock case
-    it.skip('should get multiple pages of members for google', function (done) {
+    it('should get multiple pages of members for google', function (done) {
       this.timeout(0)
       api.getOrgMembers({ org: 'google' }, function (err, members) {
         assert.equal(members.length > 400, true, 'Has got all pages')
@@ -29,29 +29,15 @@ describe('api', function () {
 
     })
 
-    it.skip('should add non-Clock members from an include list', function () {
-      // TODO: Implement include lists
-      var includeList = [ 'maael' ]
-
-      api.getOrgMembers({ org: 'clocklimited' }, function (err, members) {
+    it('should add non-Clock members from an include list', function (done) {
+      var includeList = [ 'tomgco' ]
+      this.timeout(0)
+      moduleFinder.findModules({ includeList: includeList }, function (err, members) {
         var includedMembers = members.filter(function (member) {
-          return includeList.indexOf(member.login) > -1
+          return includeList.indexOf(member.user) > -1
         });
-
-        assert.equal(includeList.length, includedMembers.length, 'Included members aren\'t returned')
-      })
-    })
-
-    it.skip('should exclude Clock members from an exclude list', function () {
-      // TODO: Implement exclude lists
-      var excludeList = [ 'maael' ]
-
-      api.getOrgMembers(function (err, members) {
-        var excludedMembers = members.filter(function(member) {
-          return excludeList.indexOf(member.login) > -1
-        })
-
-        assert.equal(excludedMembers.length, 0, 'Excluded members are returned')
+        assert.equal(includedMembers.length > 0, true,  'Included members aren\'t returned')
+        done()
       })
     })
   })
@@ -67,7 +53,7 @@ describe('api', function () {
       })
 
       // Skipped as there isn't a nock case
-      it.skip('should get the multiple pages of Clock repos', function (done) {
+      it('should get the multiple pages of Clock repos', function (done) {
         this.timeout(0)
         api.getRepos({ teamId: '152302' }, function (err, repos) {
           assert.equal(typeof repos, 'object', 'Repo list is an object')
@@ -87,7 +73,7 @@ describe('api', function () {
       })
 
       // Skipped as there isn't a nock case
-      it.skip('should get multiple pages of tj\'s repos', function (done) {
+      it('should get multiple pages of tj\'s repos', function (done) {
         this.timeout(0)
         api.getRepos({ user: 'tj' }, function(err, repos) {
           assert.equal(typeof repos, 'object', 'Repo list is an object')
