@@ -5,25 +5,26 @@ module.exports = function () {
   function getUniqueClockRepos(cb) {
     var repoNames
       , notInList
-      , language
+      , languageCheck
 
-    api.getRepos({teamId: '152302'}, function (err, repos) {
+    api.getRepos({ teamId: '152302' }, function (err, repos) {
 
-      if (err) {
-        return cb(err)
-      }
+      if (err) return cb(err)
 
-      repoNames = repos.reduce(function (list, repo) {
+      function getProbableJavaScriptRepos (list, repo) {
         notInList = (list.indexOf(repo.name) < 0)
-        language = (repo.language === 'JavaScript' || repo.language === null)
-        if (notInList && language) {
-          list.push({
-            user: repo.owner.login
-          , repo: repo.name
-          })
+        languageCheck = (repo.language === 'JavaScript' || repo.language === null)
+        if (notInList && languageCheck) {
+          list.push(
+            { user: repo.owner.login
+            , repo: repo.name
+            }
+          )
         }
         return list
-      }, [])
+      }
+
+      repoNames = repos.reduce(getProbableJavaScriptRepos, [])
 
       cb(null, repoNames);
     })
@@ -32,9 +33,7 @@ module.exports = function () {
   function getClockMembersList(cb) {
     api.getOrgMembers({ org: 'clocklimited' }, function (err, members) {
 
-      if(err) {
-        return cb(err)
-      }
+      if (err) return cb(err)
 
       var membersList = members.reduce(function (list, member) {
         list.push(member.login)
@@ -42,6 +41,7 @@ module.exports = function () {
       }, [])
 
       cb(null, membersList)
+
     })
   }
 
@@ -52,7 +52,7 @@ module.exports = function () {
         return cb(null,[])
       } else {
         var data = JSON.parse(new Buffer(res.content, 'base64').toString())
-        , dependencies = []
+          , dependencies = []
         if (data.dependencies) dependencies = dependencies.concat(Object.keys(data.dependencies))
         if (data.devDependencies) dependencies = dependencies.concat(Object.keys(data.devDependencies))
         cb(null, dependencies)
