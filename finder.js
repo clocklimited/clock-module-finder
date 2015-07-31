@@ -8,9 +8,7 @@ module.exports = function () {
       , languageCheck
 
     api.getRepos({ teamId: '152302' }, function (err, repos) {
-
       if (err) return cb(err)
-
       function getProbableJavaScriptRepos (list, repo) {
         notInList = (list.indexOf(repo.name) < 0)
         languageCheck = (repo.language === 'JavaScript' || repo.language === null)
@@ -23,25 +21,19 @@ module.exports = function () {
         }
         return list
       }
-
       repoNames = repos.reduce(getProbableJavaScriptRepos, [])
-
       cb(null, repoNames);
     })
   }
 
   function getClockMembersList(cb) {
     api.getOrgMembers({ org: 'clocklimited' }, function (err, members) {
-
       if (err) return cb(err)
-
       var membersList = members.reduce(function (list, member) {
         list.push(member.login)
         return list
       }, [])
-
       cb(null, membersList)
-
     })
   }
 
