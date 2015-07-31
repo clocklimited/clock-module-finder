@@ -31,7 +31,7 @@ describe('api', function () {
 
     it.skip('should add non-Clock members from an include list', function () {
       // TODO: Implement include lists
-      var includeList = ['maael']
+      var includeList = [ 'maael' ]
 
       api.getOrgMembers({ org: 'clocklimited' }, function (err, members) {
         var includedMembers = members.filter(function (member) {
@@ -44,7 +44,7 @@ describe('api', function () {
 
     it.skip('should exclude Clock members from an exclude list', function () {
       // TODO: Implement exclude lists
-      var excludeList = ['maael']
+      var excludeList = [ 'maael' ]
 
       api.getOrgMembers(function (err, members) {
         var excludedMembers = members.filter(function(member) {
@@ -65,7 +65,7 @@ describe('api', function () {
           done()
         })
       })
-      
+
       // Skipped as there isn't a nock case
       it.skip('should get the multiple pages of Clock repos', function (done) {
         this.timeout(0)
@@ -74,7 +74,7 @@ describe('api', function () {
           assert.equal(repos.length > 100, true, 'Has not used multiple pages')
           done()
         })
-      })  
+      })
     })
 
     describe('#getUserRepos', function () {
@@ -85,7 +85,7 @@ describe('api', function () {
           done()
         })
       })
-      
+
       // Skipped as there isn't a nock case
       it.skip('should get multiple pages of tj\'s repos', function (done) {
         this.timeout(0)
@@ -126,7 +126,7 @@ describe('finder', function () {
   describe('#getDependencies', function () {
     it('should get an error object', function (done) {
       this.timeout(0)
-      finder.getDependencies({ user: 'bag-man' , repo: 'process-game'}, function (err, res) {
+      finder.getDependencies({ user: 'bag-man' , repo: 'process-game' }, function (err, res) {
         assert.equal(err, null, 'Error came back not as null')
         assert.equal(res.length, 0, 'There is data being returned')
         done()
@@ -134,16 +134,16 @@ describe('finder', function () {
     })
 
     it('should get the full list of dependencies repos', function (done) {
-      finder.getDependencies({ user: 'maael' , repo: 'gw2-api-wrapper'}, function (err, res) {
-        var dependencyList = [
-          'chai', 
-          'chai-as-promised', 
-          'chai-things', 
-          'request', 
-          'chai', 
-          'chai-as-promised', 
-          'chai-things', 
-          'mocha']
+      finder.getDependencies({ user: 'maael' , repo: 'gw2-api-wrapper' }, function (err, res) {
+        var dependencyList =
+         [ 'chai'
+         , 'chai-as-promised'
+         , 'chai-things'
+         , 'request'
+         , 'chai'
+         , 'chai-as-promised'
+         , 'chai-things'
+         , 'mocha' ]
         assert.deepEqual(res, dependencyList, 'Data is not the same')
         assert.equal(err, null, 'Error object found')
         done()
@@ -156,7 +156,7 @@ describe('moduleFinder', function () {
   describe('#findModules', function () {
     it('should find modules', function (done) {
       this.timeout(0)
-      moduleFinder.findModules({includeList: ['request']}, function (err, modules) {
+      moduleFinder.findModules({ includeList: [ 'request' ] }, function (err, modules) {
         assert.equal(modules.length > 0, true, 'Modules has no elements')
         done()
       })
@@ -168,7 +168,7 @@ describe('showReport', function () {
   describe('#showReport', function () {
     it('should display report of data', function (done) {
       this.timeout(0)
-      moduleFinder.findModules({includeList: ['request']}, moduleFinder.showReport) 
+      moduleFinder.findModules({ includeList: [ 'request' ] }, moduleFinder.showReport)
       done()
     })
   })
