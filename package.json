@@ -16,7 +16,9 @@
   "homepage": "https://github.com/clocklimited/clock-module-finder#readme",
   "dependencies": {
     "async": "^1.4.0",
+    "coveralls": "^2.11.3",
     "github": "^0.2.4",
+    "mocha-lcov-reporter": "0.0.2",
     "nock": "^2.9.1",
     "npm": "^2.13.2"
   },
