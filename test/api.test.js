@@ -115,16 +115,16 @@ describe('api', function () {
   })
 
   describe('Test calls to NPM registry', function () {
-    describe('#getPackageJson', function () {
+    describe('#getFile', function () {
       it('should get the package json for a repo', function (done) {
         nock('https://api.github.com')
         .defaultReplyHeaders({ 'Content-Type': 'application/json' })
         .get('/repos/maael/gw2-api-wrapper/contents/package.json')
         .replyWithFile(200, __dirname + '/responses/package.json')
 
-        api.getPackageJson({ user: 'maael', repo: 'gw2-api-wrapper' }, function (err, packageJson) {
-          assert.equal(packageJson.name, 'package.json', 'package.json not found')
-          assert.equal(typeof packageJson.content, 'string', 'No content in file')
+        api.getFile({ user: 'maael', repo: 'gw2-api-wrapper', file: 'package.json' }, function (err, pkg) {
+          assert.equal(pkg.name, 'package.json', 'package.json not found')
+          assert.equal(typeof pkg.content, 'string', 'No content in file')
           done()
         })
       })
