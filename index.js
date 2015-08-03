@@ -20,7 +20,7 @@ module.exports = function (options) {
       }
       return list
     }, {})
-    return depsList;
+    return depsList
   }
 
   function getDependenciesStats(cb) {
@@ -80,7 +80,7 @@ module.exports = function (options) {
 
   function showReport(err, res) {
     res.sort(function(a, b) {
-      return b.count - a.count;
+      return b.count - a.count
     })
     var report = ''
     report += '# Clock npm package leaderboard\n'
@@ -91,7 +91,6 @@ module.exports = function (options) {
       report += '(https://github.com/' + res[i].user + '/' + res[i].repo + ') has been used ' + res[i].count + ' times.'
       report += '\n'
     }
-    console.log(report)
   }
 
   function getStats () {
