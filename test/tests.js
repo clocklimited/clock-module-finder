@@ -5,15 +5,15 @@ var assert = require('assert')
   , npm = require('npm')
 
 /* Uncomment / comment for offline / online tests */
-  require('./nockSetup.js')()
+  require('./nock-setup.js')()
 
 describe('api', function () {
   describe('#getOrgMembers', function () {
     // Skipped as there is not a nock case
-    it('should get multiple pages of members for google', function (done) {
+    it('should get multiple pages of members for nodejs', function (done) {
       this.timeout(0)
-      api.getOrgMembers({ org: 'google' }, function (err, members) {
-        assert.equal(members.length > 400, true, 'Has got all pages')
+      api.getOrgMembers({ org: 'nodejs' }, function (err, members) {
+        assert.equal(members.length === 147, true, 'Has got all pages')
         done()
       })
     })
@@ -51,13 +51,11 @@ describe('api', function () {
         })
       })
 
-      it('should get the multiple pages of Clock repos', function (done) {
+      it('should get the multiple pages of google repos', function (done) {
         this.timeout(0)
-        api.getRepos({ teamId: '152302' }, function (err, repos) {
-          // see above
-          // use exact values
+        api.getRepos({ teamId: '7378196' }, function (err, repos) {
           assert.equal(typeof repos, 'object', 'Repo list is an object')
-          assert.equal(repos.length, 102, 'Has not used multiple pages')
+          assert.equal(repos.length === 160, true, 'Has not used multiple pages')
           done()
         })
       })
@@ -77,7 +75,7 @@ describe('api', function () {
         this.timeout(0)
         api.getRepos({ user: 'tj' }, function(err, repos) {
           assert.equal(typeof repos, 'object', 'Repo list is an object')
-          assert.equal(repos.length > 100, true, 'Has not used multiple pages')
+          assert.equal(repos.length === 120, true, 'Has not used multiple pages')
           done()
         })
       })
