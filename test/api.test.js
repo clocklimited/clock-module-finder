@@ -131,18 +131,11 @@ describe('api', function () {
     })
 
     describe('#getPackageRepo', function () {
-      // nock.recorder.rec()
       it('should get the repo of the package', function (done) {
-        nock('http://npm.clockte.ch:80')
+        nock('http://npm.clockte.ch:80') // Works on Owens system.
         .persist()
         .get('/mocha')
         .replyWithFile(304, __dirname + '/responses/npm-mocha.json')
-
-        /*
-        nock('https://registry.npmjs.org:443')
-        .persist()
-        .get('/mocha')
-        .replyWithFile(304, __dirname + '/responses/npm-mocha.json') */
 
         npm.load({}, function () {
           api.getPackageRepo('mocha', function (err, packageRepo) {
@@ -152,7 +145,6 @@ describe('api', function () {
           })
         })
       })
-      // console.log(nock.recorder.play())
     })
   })
 })
