@@ -134,16 +134,15 @@ describe('api', function () {
       it('should get the repo of the package', function (done) {
         nock('http://npm.clockte.ch:80')
         .get('/mocha')
-        .reply()
+        .reply(304)
 
         nock('https://registry.npmjs.org:443')
         .get('/mocha')
-        .reply()
+        .reply(304)
 
         npm.load({}, function () {
           api.getPackageRepo('mocha', function (err, packageRepo) {
-            // Perform tests here.
-            console.log(packageRepo)
+            assert.equal(packageRepo.url, 'git://github.com/mochajs/mocha.git', 'Recieved wrong URL')
             done()
           })
         })
