@@ -11,6 +11,20 @@ module.exports = function() {
   nock('https://api.github.com')
   .defaultReplyHeaders({ 'Content-Type': 'application/json' })
   .persist()
+  .get('/orgs/nodejs/members')
+  .query({ page: 1, 'per_page': 100 })
+  .replyWithFile(200, __dirname + '/responses/nodejs-users1.json')
+
+  nock('https://api.github.com')
+  .defaultReplyHeaders({ 'Content-Type': 'application/json' })
+  .persist()
+  .get('/orgs/nodejs/members')
+  .query({ page: 2, 'per_page': 100 })
+  .replyWithFile(200, __dirname + '/responses/nodejs-users2.json')
+
+  nock('https://api.github.com')
+  .defaultReplyHeaders({ 'Content-Type': 'application/json' })
+  .persist()
   .get('/repos/bag-man/process-game/contents/package.json')
   .replyWithFile(200, __dirname + '/responses/errorpackage.json')
 
@@ -24,7 +38,19 @@ module.exports = function() {
   .defaultReplyHeaders({ 'Content-Type': 'application/json' })
   .get('/teams/152302/repos')
   .query({ page: 1, 'per_page': 100 })
-  .replyWithFile(200, __dirname + '/responses/clock_repos.json')
+  .replyWithFile(200, __dirname + '/responses/clock-repos.json')
+
+  nock('https://api.github.com')
+  .defaultReplyHeaders({ 'Content-Type': 'application/json' })
+  .get('/teams/7378196/repos')
+  .query({ page: 1, 'per_page': 100 })
+  .replyWithFile(200, __dirname + '/responses/google-repos1.json')
+
+  nock('https://api.github.com')
+  .defaultReplyHeaders({ 'Content-Type': 'application/json' })
+  .get('/teams/7378196/repos')
+  .query({ page: 2, 'per_page': 100 })
+  .replyWithFile(200, __dirname + '/responses/google-repos2.json')
 
   nock('https://api.github.com')
   .defaultReplyHeaders({ 'Content-Type': 'application/json' })
@@ -35,10 +61,23 @@ module.exports = function() {
 
   nock('https://api.github.com')
   .defaultReplyHeaders({ 'Content-Type': 'application/json' })
+  .get('/users/tj/repos')
+  .query({ page: 1, 'per_page': 100 })
+  .replyWithFile(200, __dirname + '/responses/user-repos.json')
+
+  nock('https://api.github.com')
+  .defaultReplyHeaders({ 'Content-Type': 'application/json' })
   .persist()
   .get('/users/tj/repos')
   .query({ page: 1, 'per_page': 100 })
-  .replyWithFile(200, __dirname + '/responses/userrepos.json')
+  .replyWithFile(200, __dirname + '/responses/user-repos1.json')
+
+  nock('https://api.github.com')
+  .defaultReplyHeaders({ 'Content-Type': 'application/json' })
+  .persist()
+  .get('/users/tj/repos')
+  .query({ page: 2, 'per_page': 100 })
+  .replyWithFile(200, __dirname + '/responses/user-repos2.json')
 
   console.log('Nock routes started')
 
