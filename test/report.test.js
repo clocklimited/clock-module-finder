@@ -16,9 +16,9 @@ describe('report', function () {
             ]
           , expectedReportLines = [
               '# Clock npm package leaderboard'
-            , '| Repository | Number of times used | David-dm | '
-            , '|:-----------|:---------------------|:---------| '
-            ,  '| [serby/schemata](https://github.com/serby/schemata) | 38 |  ✘ |'
+            , '| Repository | Number of times used | Has david-dm | David-dm | David-dm Dev | '
+            , '|:-----------|:---------------------|:-------------|:---------|:-------------| '
+            , '| [serby/schemata](https://github.com/serby/schemata) | 38 |  ✘ |[![Dependencies Status](https://img.shields.io/david/serby/schemata.svg)](https://david-dm.org/serby/schemata) |[![devDependencies Status](https://img.shields.io/david/serby/schemata/dev-status.svg)](https://david-dm.org/serby/schemata#info=devDependencies) |'
             , ''
             ]
           , reportText = report.get(null, reportTestData)
