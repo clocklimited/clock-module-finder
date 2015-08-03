@@ -1,0 +1,18 @@
+{
+  "name": "package.json",
+  "path": "package.json",
+  "sha": "ba8c3031afbbb94ce536c9ee2c365716aa25a917",
+  "size": 798,
+  "url": "https://api.github.com/repos/serby/service-locator/contents/package.json?ref=master",
+  "html_url": "https://github.com/serby/service-locator/blob/master/package.json",
+  "git_url": "https://api.github.com/repos/serby/service-locator/git/blobs/ba8c3031afbbb94ce536c9ee2c365716aa25a917",
+  "download_url": "https://raw.githubusercontent.com/serby/service-locator/master/package.json",
+  "type": "file",
+  "content": "ewoJIm5hbWUiOiAic2VydmljZS1sb2NhdG9yIiwKCSJkZXNjcmlwdGlvbiI6\nICJzZXJ2aWNlLWxvY2F0b3IgaGVscHMga2VlcCB5b3VyIHN5c3RlbSBkZWNv\ndXBsZWQgYnkgcHJvdmlkaW5nIGEgY2VudHJhbCBsb2NhdGlvbiB3aGVyZSB5\nb3VyIGFwcGxpY2F0aW9uIGluZm9ybWF0aW9uIGNhbiBiZSBmb3VuZCBieSBv\ndGhlciBwYXJ0cyBvZiB5b3UgYXBwbGljYXRpb24uIiwKCSJ2ZXJzaW9uIjog\nIjEuMC4wIiwKCSJhdXRob3IiOiAiUGF1bCBTZXJieSA8cGF1bC5zZXJieUBj\nbG9jay5jby51az4iLAoJImNvbnRyaWJ1dG9ycyI6IFsKCQl7ICJuYW1lIjog\nIlBhdWwgU2VyYnkiLCAiZW1haWwiOiAicGF1bC5zZXJieUBjbG9jay5jby51\nayIgfQoJXSwKCSJwdWJsaXNoQ29uZmlnIjogewoJICAicmVnaXN0cnkiOiAi\naHR0cDovL3JlZ2lzdHJ5Lm5wbWpzLm9yZyIKCX0sCgkiZGVwZW5kZW5jaWVz\nIjogewoJfSwKCSJkZXZEZXBlbmRlbmNpZXMiOiB7CgkJIm1vY2hhIjogIioi\nLAoJCSJzaG91bGQiOiAiKiIKCX0sCgkia2V5d29yZHMiOiBbInNlcnZpY2Ug\nbG9jYXRvciIsICJyZWdpc3RyeSIsICJkZWNvdXBsZSJdLAoJInJlcG9zaXRv\ncnkiOiAiZ2l0Oi8vZ2l0aHViLmNvbS9zZXJieS9zZXJ2aWNlLWxvY2F0b3Ii\nLAoJIm1haW4iOiAic2VydmljZS1sb2NhdG9yIiwKCSJzY3JpcHRzIjogewoJ\nCSJ0ZXN0IjogIm5vZGVfbW9kdWxlcy8uYmluL21vY2hhIC1yIHNob3VsZCAt\nUiBzcGVjIiwKCQkicHJlcHVibGlzaCIgOiAibnBtIHBydW5lIgoJfSwKCSJl\nbmdpbmVzIjogeyAibm9kZSI6ICI+PSAwLjQuNiIgfQp9\n",
+  "encoding": "base64",
+  "_links": {
+    "self": "https://api.github.com/repos/serby/service-locator/contents/package.json?ref=master",
+    "git": "https://api.github.com/repos/serby/service-locator/git/blobs/ba8c3031afbbb94ce536c9ee2c365716aa25a917",
+    "html": "https://github.com/serby/service-locator/blob/master/package.json"
+  }
+}

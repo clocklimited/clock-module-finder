@@ -3,6 +3,7 @@ var assert = require('assert')
   , finder = require('../lib/finder')()
 
 describe('finder', function() {
+
   describe('#getUniqueClockRepos', function () {
     it('gets unique clock repos', function (done) {
 
@@ -21,6 +22,7 @@ describe('finder', function() {
 
     })
   })
+
   describe('#getClockMembersList', function () {
     it('should get list of Clock members', function (done) {
 
@@ -54,4 +56,5 @@ describe('finder', function() {
 
     })
   })
+
 })
