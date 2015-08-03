@@ -1,83 +1,83 @@
 # Clock npm package leaderboard
-| Repository | Number of times used | David-dm | 
-|:-----------|:---------------------|:---------| 
-| [serby/service-locator](https://github.com/serby/service-locator) | 42 |  ✘ |
-| [serby/pliers](https://github.com/serby/pliers) | 39 |  ✘ |
-| [serby/schemata](https://github.com/serby/schemata) | 38 |  ✘ |
-| [serby/validity](https://github.com/serby/validity) | 33 |  ✘ |
-| [bengourley/slugg](https://github.com/bengourley/slugg) | 32 |  ✘ |
-| [tomgco/jshint-full-path](https://github.com/tomgco/jshint-full-path) | 31 |  ✘ |
-| [bengourley/stylus-renderer](https://github.com/bengourley/node-stylus-renderer) | 31 |  ✘ |
-| [serby/versionator](https://github.com/serby/versionator) | 31 |  ✘ |
-| [serby/clustered](https://github.com/serby/clustered) | 30 |  ✘ |
-| [serby/uber-cache](https://github.com/serby/uber-cache) | 30 |  ✓ |
-| [serby/regg](https://github.com/serby/regg) | 29 |  ✘ |
-| [domharrington/secure](https://github.com/domharrington/secure) | 28 |  ✘ |
-| [serby/crud-service](https://github.com/serby/crud-service) | 27 |  ✘ |
-| [serby/pliers-clean-shrinkwrap](https://github.com/serby/pliers-clean-shrinkwrap) | 26 |  ✘ |
-| [serby/doorman](https://github.com/serby/doorman) | 26 |  ✘ |
-| [serby/evnet](https://github.com/serby/evnet) | 26 |  ✘ |
-| [bengourley/modal](https://github.com/bengourley/modal.js) | 25 |  ✘ |
-| [tomgco/mc-logger](https://github.com/tomgco/mc-logger) | 24 |  ✘ |
-| [bengourley/browjadify](https://github.com/bengourley/browjadify) | 23 |  ✘ |
-| [serby/save](https://github.com/serby/save) | 22 |  ✓ |
-| [bengourley/darkroom-url-builder](https://github.com/bengourley/darkroom-url-builder) | 20 |  ✘ |
-| [serby/pliers-danger-seeker](https://github.com/serby/pliers-danger-seeker) | 18 |  ✘ |
-| [serby/save-mongodb](https://github.com/serby/save-mongodb) | 17 |  ✘ |
-| [serby/bundled](https://github.com/serby/bundled) | 17 |  ✘ |
-| [bengourley/validity-unique-property](https://github.com/bengourley/validity-unique-property) | 16 |  ✘ |
-| [domharrington/x-frame-options](https://github.com/domharrington/x-frame-options) | 14 |  ✘ |
-| [jackbrewer/stylus-mixins](https://github.com/jackbrewer/stylus-mixins) | 13 |  ✘ |
-| [bengourley/browjadify-compile](https://github.com/bengourley/browjadify-compile) | 13 |  ✘ |
-| [domharrington/pliers-npm-security-check](https://github.com/domharrington/pliers-npm-security-check) | 13 |  ✘ |
-| [serby/configury](https://github.com/serby/configury) | 13 |  ✘ |
-| [domharrington/validity-validate-if-set](https://github.com/domharrington/validity-validate-if-set) | 12 |  ✘ |
-| [bengourley/validity-cf-image-context-selection](https://github.com/bengourley/validity-cf-image-context-selection) | 12 |  ✘ |
-| [bengourley/break](https://github.com/bengourley/break) | 11 |  ✘ |
-| [serby/trunky](https://github.com/serby/trunky) | 10 |  ✘ |
-| [serby/validity-date-before-property](https://github.com/serby/validity-date-before-property) | 10 |  ✘ |
-| [microadam/validity-validate-if-property-equals](https://github.com/microadam/validity-validate-if-property-equals) | 9 |  ✘ |
-| [bengourley/ventnor](https://github.com/bengourley/ventnor) | 9 |  ✘ |
-| [tomgco/validity-regex-match](https://github.com/tomgco/validity-regex-match) | 8 |  ✘ |
-| [microadam/redirect-trailing-slash](https://github.com/microadam/redirect-trailing-slash) | 8 |  ✘ |
-| [microadam/component-loader](https://github.com/microadam/component-loader) | 8 |  ✘ |
-| [serby/express-graceful-shutdown](https://github.com/serby/express-graceful-shutdown) | 8 |  ✘ |
-| [microadam/express-server-cluster](https://github.com/microadam/express-server-cluster) | 8 |  ✘ |
-| [microadam/ua-compatible](https://github.com/microadam/ua-compatible) | 8 |  ✘ |
-| [serby/any-newer-files](https://github.com/serby/any-newer-files) | 7 |  ✘ |
-| [microadam/string-crypt](https://github.com/microadam/string-crypt) | 6 |  ✘ |
-| [bengourley/merstone](https://github.com/bengourley/merstone) | 6 |  ✘ |
-| [serby/piton-pipe](https://github.com/serby/piton-pipe) | 6 |  ✘ |
-| [bengourley/chale](https://github.com/bengourley/chale) | 5 |  ✘ |
-| [microadam/validity-validate-if-property-set](https://github.com/microadam/validity-validate-if-property-set) | 5 |  ✘ |
-| [serby/uber-memoize](https://github.com/serby/uber-memoize) | 5 |  ✘ |
-| [domharrington/database-updates](https://github.com/domharrington/database-updates) | 5 |  ✓ |
-| [bengourley/validity-number-in-range](https://github.com/bengourley/validity-number-in-range) | 5 |  ✘ |
-| [bengourley/validity-number-or-null](https://github.com/bengourley/validity-number-or-null) | 5 |  ✘ |
-| [bengourley/validity-payment-card-number](https://github.com/bengourley/validity-payment-card-number) | 4 |  ✘ |
-| [bengourley/validity-date-in-range](https://github.com/bengourley/validity-date-in-range) | 4 |  ✘ |
-| [domharrington/2d-array](https://github.com/domharrington/2d-array) | 4 |  ✘ |
-| [serby/ttl-lru-cache](https://github.com/serby/ttl-lru-cache) | 4 |  ✘ |
-| [benedfit/stylperjade](https://github.com/benedfit/stylperjade) | 4 |  ✘ |
-| [bengourley/anytime](https://github.com/bengourley/anytime) | 4 |  ✘ |
-| [bengourley/currency-symbol-map](https://github.com/bengourley/currency-symbol-map) | 4 |  ✘ |
-| [tomgco/validity-string-represents-mongodb-objectid](https://github.com/tomgco/validity-string-represents-mongodb-objectid) | 4 |  ✘ |
-| [bengourley/validity-equal](https://github.com/bengourley/validity-equal) | 4 |  ✘ |
-| [bengourley/crud-subservice](https://github.com/bengourley/crud-subservice) | 4 |  ✘ |
-| [domharrington/delete-ee-properties](https://github.com/domharrington/delete-ee-properties) | 3 |  ✘ |
-| [serby/object-to-csv-stream](https://github.com/serby/object-to-csv-stream) | 3 |  ✘ |
-| [kuba81/uber-cache-namespace](https://github.com/kuba81/uber-cache-namespace) | 2 |  ✘ |
-| [domharrington/does-index-exist](https://github.com/domharrington/does-index-exist) | 2 |  ✘ |
-| [domharrington/validation-stream](https://github.com/domharrington/validation-stream) | 2 |  ✘ |
-| [serby/simplate](https://github.com/serby/simplate) | 2 |  ✘ |
-| [serby/uber-cache-memcached](https://github.com/serby/uber-cache-memcached) | 2 |  ✓ |
-| [serby/component-loader-extends](https://github.com/serby/component-loader-extends) | 1 |  ✘ |
-| [domharrington/odd-index-unshift](https://github.com/domharrington/odd-index-unshift) | 1 |  ✘ |
-| [domharrington/truncate-to-multiple](https://github.com/domharrington/truncate-to-multiple) | 1 |  ✘ |
-| [balaclark/validity-require-one](https://github.com/balaclark/validity-require-one) | 1 |  ✘ |
-| [serby/resolve-relation-stream](https://github.com/serby/resolve-relation-stream) | 1 |  ✘ |
-| [domharrington/ventnor-selectize](https://github.com/domharrington/ventnor-selectize) | 1 |  ✓ |
-| [serby/countdown-string](https://github.com/serby/countdown-string) | 1 |  ✓ |
-| [benjaminparnell/validity-or-validator](https://github.com/benjaminparnell/validity-or-validator) | 1 |  ✘ |
-| [benjaminparnell/validity-mailto-link](https://github.com/benjaminparnell/validity-mailto-link) | 1 |  ✘ |
-| [domharrington/number-abbreviate](https://github.com/domharrington/js-number-abbreviate) | 1 |  ✘ |
+| Repository | Number of times used | Has david-dm | David-dm | 
+|:-----------|:---------------------|:-------------|:----------| 
+| [serby/service-locator](https://github.com/serby/service-locator) | 42 |  ✘ |[![Dependencies Status](https://img.shields.io/david/serby/service-locator.svg)](https://david-dm.org/serby/service-locator) |
+| [serby/pliers](https://github.com/serby/pliers) | 39 |  ✘ |[![Dependencies Status](https://img.shields.io/david/serby/pliers.svg)](https://david-dm.org/serby/pliers) |
+| [serby/schemata](https://github.com/serby/schemata) | 38 |  ✘ |[![Dependencies Status](https://img.shields.io/david/serby/schemata.svg)](https://david-dm.org/serby/schemata) |
+| [serby/validity](https://github.com/serby/validity) | 33 |  ✘ |[![Dependencies Status](https://img.shields.io/david/serby/validity.svg)](https://david-dm.org/serby/validity) |
+| [bengourley/slugg](https://github.com/bengourley/slugg) | 32 |  ✘ |[![Dependencies Status](https://img.shields.io/david/bengourley/slugg.svg)](https://david-dm.org/bengourley/slugg) |
+| [tomgco/jshint-full-path](https://github.com/tomgco/jshint-full-path) | 31 |  ✘ |[![Dependencies Status](https://img.shields.io/david/tomgco/jshint-full-path.svg)](https://david-dm.org/tomgco/jshint-full-path) |
+| [bengourley/stylus-renderer](https://github.com/bengourley/node-stylus-renderer) | 31 |  ✘ |[![Dependencies Status](https://img.shields.io/david/bengourley/node-stylus-renderer.svg)](https://david-dm.org/bengourley/node-stylus-renderer) |
+| [serby/versionator](https://github.com/serby/versionator) | 31 |  ✘ |[![Dependencies Status](https://img.shields.io/david/serby/versionator.svg)](https://david-dm.org/serby/versionator) |
+| [serby/clustered](https://github.com/serby/clustered) | 30 |  ✘ |[![Dependencies Status](https://img.shields.io/david/serby/clustered.svg)](https://david-dm.org/serby/clustered) |
+| [serby/uber-cache](https://github.com/serby/uber-cache) | 30 |  ✓ |[![Dependencies Status](https://img.shields.io/david/serby/uber-cache.svg)](https://david-dm.org/serby/uber-cache) |
+| [serby/regg](https://github.com/serby/regg) | 29 |  ✘ |[![Dependencies Status](https://img.shields.io/david/serby/regg.svg)](https://david-dm.org/serby/regg) |
+| [domharrington/secure](https://github.com/domharrington/secure) | 28 |  ✘ |[![Dependencies Status](https://img.shields.io/david/domharrington/secure.svg)](https://david-dm.org/domharrington/secure) |
+| [serby/crud-service](https://github.com/serby/crud-service) | 27 |  ✘ |[![Dependencies Status](https://img.shields.io/david/serby/crud-service.svg)](https://david-dm.org/serby/crud-service) |
+| [serby/pliers-clean-shrinkwrap](https://github.com/serby/pliers-clean-shrinkwrap) | 26 |  ✘ |[![Dependencies Status](https://img.shields.io/david/serby/pliers-clean-shrinkwrap.svg)](https://david-dm.org/serby/pliers-clean-shrinkwrap) |
+| [serby/doorman](https://github.com/serby/doorman) | 26 |  ✘ |[![Dependencies Status](https://img.shields.io/david/serby/doorman.svg)](https://david-dm.org/serby/doorman) |
+| [serby/evnet](https://github.com/serby/evnet) | 26 |  ✘ |[![Dependencies Status](https://img.shields.io/david/serby/evnet.svg)](https://david-dm.org/serby/evnet) |
+| [bengourley/modal](https://github.com/bengourley/modal.js) | 25 |  ✘ |[![Dependencies Status](https://img.shields.io/david/bengourley/modal.js.svg)](https://david-dm.org/bengourley/modal.js) |
+| [tomgco/mc-logger](https://github.com/tomgco/mc-logger) | 24 |  ✘ |[![Dependencies Status](https://img.shields.io/david/tomgco/mc-logger.svg)](https://david-dm.org/tomgco/mc-logger) |
+| [bengourley/browjadify](https://github.com/bengourley/browjadify) | 23 |  ✘ |[![Dependencies Status](https://img.shields.io/david/bengourley/browjadify.svg)](https://david-dm.org/bengourley/browjadify) |
+| [serby/save](https://github.com/serby/save) | 22 |  ✓ |[![Dependencies Status](https://img.shields.io/david/serby/save.svg)](https://david-dm.org/serby/save) |
+| [bengourley/darkroom-url-builder](https://github.com/bengourley/darkroom-url-builder) | 20 |  ✘ |[![Dependencies Status](https://img.shields.io/david/bengourley/darkroom-url-builder.svg)](https://david-dm.org/bengourley/darkroom-url-builder) |
+| [serby/pliers-danger-seeker](https://github.com/serby/pliers-danger-seeker) | 18 |  ✘ |[![Dependencies Status](https://img.shields.io/david/serby/pliers-danger-seeker.svg)](https://david-dm.org/serby/pliers-danger-seeker) |
+| [serby/save-mongodb](https://github.com/serby/save-mongodb) | 17 |  ✘ |[![Dependencies Status](https://img.shields.io/david/serby/save-mongodb.svg)](https://david-dm.org/serby/save-mongodb) |
+| [serby/bundled](https://github.com/serby/bundled) | 17 |  ✘ |[![Dependencies Status](https://img.shields.io/david/serby/bundled.svg)](https://david-dm.org/serby/bundled) |
+| [bengourley/validity-unique-property](https://github.com/bengourley/validity-unique-property) | 16 |  ✘ |[![Dependencies Status](https://img.shields.io/david/bengourley/validity-unique-property.svg)](https://david-dm.org/bengourley/validity-unique-property) |
+| [domharrington/x-frame-options](https://github.com/domharrington/x-frame-options) | 14 |  ✘ |[![Dependencies Status](https://img.shields.io/david/domharrington/x-frame-options.svg)](https://david-dm.org/domharrington/x-frame-options) |
+| [jackbrewer/stylus-mixins](https://github.com/jackbrewer/stylus-mixins) | 13 |  ✘ |[![Dependencies Status](https://img.shields.io/david/jackbrewer/stylus-mixins.svg)](https://david-dm.org/jackbrewer/stylus-mixins) |
+| [bengourley/browjadify-compile](https://github.com/bengourley/browjadify-compile) | 13 |  ✘ |[![Dependencies Status](https://img.shields.io/david/bengourley/browjadify-compile.svg)](https://david-dm.org/bengourley/browjadify-compile) |
+| [domharrington/pliers-npm-security-check](https://github.com/domharrington/pliers-npm-security-check) | 13 |  ✘ |[![Dependencies Status](https://img.shields.io/david/domharrington/pliers-npm-security-check.svg)](https://david-dm.org/domharrington/pliers-npm-security-check) |
+| [serby/configury](https://github.com/serby/configury) | 13 |  ✘ |[![Dependencies Status](https://img.shields.io/david/serby/configury.svg)](https://david-dm.org/serby/configury) |
+| [domharrington/validity-validate-if-set](https://github.com/domharrington/validity-validate-if-set) | 12 |  ✘ |[![Dependencies Status](https://img.shields.io/david/domharrington/validity-validate-if-set.svg)](https://david-dm.org/domharrington/validity-validate-if-set) |
+| [bengourley/validity-cf-image-context-selection](https://github.com/bengourley/validity-cf-image-context-selection) | 12 |  ✘ |[![Dependencies Status](https://img.shields.io/david/bengourley/validity-cf-image-context-selection.svg)](https://david-dm.org/bengourley/validity-cf-image-context-selection) |
+| [bengourley/break](https://github.com/bengourley/break) | 11 |  ✘ |[![Dependencies Status](https://img.shields.io/david/bengourley/break.svg)](https://david-dm.org/bengourley/break) |
+| [serby/trunky](https://github.com/serby/trunky) | 10 |  ✘ |[![Dependencies Status](https://img.shields.io/david/serby/trunky.svg)](https://david-dm.org/serby/trunky) |
+| [serby/validity-date-before-property](https://github.com/serby/validity-date-before-property) | 10 |  ✘ |[![Dependencies Status](https://img.shields.io/david/serby/validity-date-before-property.svg)](https://david-dm.org/serby/validity-date-before-property) |
+| [microadam/validity-validate-if-property-equals](https://github.com/microadam/validity-validate-if-property-equals) | 9 |  ✘ |[![Dependencies Status](https://img.shields.io/david/microadam/validity-validate-if-property-equals.svg)](https://david-dm.org/microadam/validity-validate-if-property-equals) |
+| [bengourley/ventnor](https://github.com/bengourley/ventnor) | 9 |  ✘ |[![Dependencies Status](https://img.shields.io/david/bengourley/ventnor.svg)](https://david-dm.org/bengourley/ventnor) |
+| [tomgco/validity-regex-match](https://github.com/tomgco/validity-regex-match) | 8 |  ✘ |[![Dependencies Status](https://img.shields.io/david/tomgco/validity-regex-match.svg)](https://david-dm.org/tomgco/validity-regex-match) |
+| [microadam/redirect-trailing-slash](https://github.com/microadam/redirect-trailing-slash) | 8 |  ✘ |[![Dependencies Status](https://img.shields.io/david/microadam/redirect-trailing-slash.svg)](https://david-dm.org/microadam/redirect-trailing-slash) |
+| [microadam/component-loader](https://github.com/microadam/component-loader) | 8 |  ✘ |[![Dependencies Status](https://img.shields.io/david/microadam/component-loader.svg)](https://david-dm.org/microadam/component-loader) |
+| [serby/express-graceful-shutdown](https://github.com/serby/express-graceful-shutdown) | 8 |  ✘ |[![Dependencies Status](https://img.shields.io/david/serby/express-graceful-shutdown.svg)](https://david-dm.org/serby/express-graceful-shutdown) |
+| [microadam/express-server-cluster](https://github.com/microadam/express-server-cluster) | 8 |  ✘ |[![Dependencies Status](https://img.shields.io/david/microadam/express-server-cluster.svg)](https://david-dm.org/microadam/express-server-cluster) |
+| [microadam/ua-compatible](https://github.com/microadam/ua-compatible) | 8 |  ✘ |[![Dependencies Status](https://img.shields.io/david/microadam/ua-compatible.svg)](https://david-dm.org/microadam/ua-compatible) |
+| [serby/any-newer-files](https://github.com/serby/any-newer-files) | 7 |  ✘ |[![Dependencies Status](https://img.shields.io/david/serby/any-newer-files.svg)](https://david-dm.org/serby/any-newer-files) |
+| [microadam/string-crypt](https://github.com/microadam/string-crypt) | 6 |  ✘ |[![Dependencies Status](https://img.shields.io/david/microadam/string-crypt.svg)](https://david-dm.org/microadam/string-crypt) |
+| [bengourley/merstone](https://github.com/bengourley/merstone) | 6 |  ✘ |[![Dependencies Status](https://img.shields.io/david/bengourley/merstone.svg)](https://david-dm.org/bengourley/merstone) |
+| [serby/piton-pipe](https://github.com/serby/piton-pipe) | 6 |  ✘ |[![Dependencies Status](https://img.shields.io/david/serby/piton-pipe.svg)](https://david-dm.org/serby/piton-pipe) |
+| [bengourley/chale](https://github.com/bengourley/chale) | 5 |  ✘ |[![Dependencies Status](https://img.shields.io/david/bengourley/chale.svg)](https://david-dm.org/bengourley/chale) |
+| [microadam/validity-validate-if-property-set](https://github.com/microadam/validity-validate-if-property-set) | 5 |  ✘ |[![Dependencies Status](https://img.shields.io/david/microadam/validity-validate-if-property-set.svg)](https://david-dm.org/microadam/validity-validate-if-property-set) |
+| [serby/uber-memoize](https://github.com/serby/uber-memoize) | 5 |  ✘ |[![Dependencies Status](https://img.shields.io/david/serby/uber-memoize.svg)](https://david-dm.org/serby/uber-memoize) |
+| [domharrington/database-updates](https://github.com/domharrington/database-updates) | 5 |  ✓ |[![Dependencies Status](https://img.shields.io/david/domharrington/database-updates.svg)](https://david-dm.org/domharrington/database-updates) |
+| [bengourley/validity-number-in-range](https://github.com/bengourley/validity-number-in-range) | 5 |  ✘ |[![Dependencies Status](https://img.shields.io/david/bengourley/validity-number-in-range.svg)](https://david-dm.org/bengourley/validity-number-in-range) |
+| [bengourley/validity-number-or-null](https://github.com/bengourley/validity-number-or-null) | 5 |  ✘ |[![Dependencies Status](https://img.shields.io/david/bengourley/validity-number-or-null.svg)](https://david-dm.org/bengourley/validity-number-or-null) |
+| [bengourley/validity-payment-card-number](https://github.com/bengourley/validity-payment-card-number) | 4 |  ✘ |[![Dependencies Status](https://img.shields.io/david/bengourley/validity-payment-card-number.svg)](https://david-dm.org/bengourley/validity-payment-card-number) |
+| [bengourley/validity-date-in-range](https://github.com/bengourley/validity-date-in-range) | 4 |  ✘ |[![Dependencies Status](https://img.shields.io/david/bengourley/validity-date-in-range.svg)](https://david-dm.org/bengourley/validity-date-in-range) |
+| [domharrington/2d-array](https://github.com/domharrington/2d-array) | 4 |  ✘ |[![Dependencies Status](https://img.shields.io/david/domharrington/2d-array.svg)](https://david-dm.org/domharrington/2d-array) |
+| [serby/ttl-lru-cache](https://github.com/serby/ttl-lru-cache) | 4 |  ✘ |[![Dependencies Status](https://img.shields.io/david/serby/ttl-lru-cache.svg)](https://david-dm.org/serby/ttl-lru-cache) |
+| [benedfit/stylperjade](https://github.com/benedfit/stylperjade) | 4 |  ✘ |[![Dependencies Status](https://img.shields.io/david/benedfit/stylperjade.svg)](https://david-dm.org/benedfit/stylperjade) |
+| [bengourley/anytime](https://github.com/bengourley/anytime) | 4 |  ✘ |[![Dependencies Status](https://img.shields.io/david/bengourley/anytime.svg)](https://david-dm.org/bengourley/anytime) |
+| [bengourley/currency-symbol-map](https://github.com/bengourley/currency-symbol-map) | 4 |  ✘ |[![Dependencies Status](https://img.shields.io/david/bengourley/currency-symbol-map.svg)](https://david-dm.org/bengourley/currency-symbol-map) |
+| [tomgco/validity-string-represents-mongodb-objectid](https://github.com/tomgco/validity-string-represents-mongodb-objectid) | 4 |  ✘ |[![Dependencies Status](https://img.shields.io/david/tomgco/validity-string-represents-mongodb-objectid.svg)](https://david-dm.org/tomgco/validity-string-represents-mongodb-objectid) |
+| [bengourley/validity-equal](https://github.com/bengourley/validity-equal) | 4 |  ✘ |[![Dependencies Status](https://img.shields.io/david/bengourley/validity-equal.svg)](https://david-dm.org/bengourley/validity-equal) |
+| [bengourley/crud-subservice](https://github.com/bengourley/crud-subservice) | 4 |  ✘ |[![Dependencies Status](https://img.shields.io/david/bengourley/crud-subservice.svg)](https://david-dm.org/bengourley/crud-subservice) |
+| [domharrington/delete-ee-properties](https://github.com/domharrington/delete-ee-properties) | 3 |  ✘ |[![Dependencies Status](https://img.shields.io/david/domharrington/delete-ee-properties.svg)](https://david-dm.org/domharrington/delete-ee-properties) |
+| [serby/object-to-csv-stream](https://github.com/serby/object-to-csv-stream) | 3 |  ✘ |[![Dependencies Status](https://img.shields.io/david/serby/object-to-csv-stream.svg)](https://david-dm.org/serby/object-to-csv-stream) |
+| [kuba81/uber-cache-namespace](https://github.com/kuba81/uber-cache-namespace) | 2 |  ✘ |[![Dependencies Status](https://img.shields.io/david/kuba81/uber-cache-namespace.svg)](https://david-dm.org/kuba81/uber-cache-namespace) |
+| [domharrington/does-index-exist](https://github.com/domharrington/does-index-exist) | 2 |  ✘ |[![Dependencies Status](https://img.shields.io/david/domharrington/does-index-exist.svg)](https://david-dm.org/domharrington/does-index-exist) |
+| [domharrington/validation-stream](https://github.com/domharrington/validation-stream) | 2 |  ✘ |[![Dependencies Status](https://img.shields.io/david/domharrington/validation-stream.svg)](https://david-dm.org/domharrington/validation-stream) |
+| [serby/simplate](https://github.com/serby/simplate) | 2 |  ✘ |[![Dependencies Status](https://img.shields.io/david/serby/simplate.svg)](https://david-dm.org/serby/simplate) |
+| [serby/uber-cache-memcached](https://github.com/serby/uber-cache-memcached) | 2 |  ✓ |[![Dependencies Status](https://img.shields.io/david/serby/uber-cache-memcached.svg)](https://david-dm.org/serby/uber-cache-memcached) |
+| [serby/component-loader-extends](https://github.com/serby/component-loader-extends) | 1 |  ✘ |[![Dependencies Status](https://img.shields.io/david/serby/component-loader-extends.svg)](https://david-dm.org/serby/component-loader-extends) |
+| [domharrington/odd-index-unshift](https://github.com/domharrington/odd-index-unshift) | 1 |  ✘ |[![Dependencies Status](https://img.shields.io/david/domharrington/odd-index-unshift.svg)](https://david-dm.org/domharrington/odd-index-unshift) |
+| [domharrington/truncate-to-multiple](https://github.com/domharrington/truncate-to-multiple) | 1 |  ✘ |[![Dependencies Status](https://img.shields.io/david/domharrington/truncate-to-multiple.svg)](https://david-dm.org/domharrington/truncate-to-multiple) |
+| [balaclark/validity-require-one](https://github.com/balaclark/validity-require-one) | 1 |  ✘ |[![Dependencies Status](https://img.shields.io/david/balaclark/validity-require-one.svg)](https://david-dm.org/balaclark/validity-require-one) |
+| [serby/resolve-relation-stream](https://github.com/serby/resolve-relation-stream) | 1 |  ✘ |[![Dependencies Status](https://img.shields.io/david/serby/resolve-relation-stream.svg)](https://david-dm.org/serby/resolve-relation-stream) |
+| [domharrington/ventnor-selectize](https://github.com/domharrington/ventnor-selectize) | 1 |  ✓ |[![Dependencies Status](https://img.shields.io/david/domharrington/ventnor-selectize.svg)](https://david-dm.org/domharrington/ventnor-selectize) |
+| [serby/countdown-string](https://github.com/serby/countdown-string) | 1 |  ✓ |[![Dependencies Status](https://img.shields.io/david/serby/countdown-string.svg)](https://david-dm.org/serby/countdown-string) |
+| [benjaminparnell/validity-or-validator](https://github.com/benjaminparnell/validity-or-validator) | 1 |  ✘ |[![Dependencies Status](https://img.shields.io/david/benjaminparnell/validity-or-validator.svg)](https://david-dm.org/benjaminparnell/validity-or-validator) |
+| [benjaminparnell/validity-mailto-link](https://github.com/benjaminparnell/validity-mailto-link) | 1 |  ✘ |[![Dependencies Status](https://img.shields.io/david/benjaminparnell/validity-mailto-link.svg)](https://david-dm.org/benjaminparnell/validity-mailto-link) |
+| [domharrington/number-abbreviate](https://github.com/domharrington/js-number-abbreviate) | 1 |  ✘ |[![Dependencies Status](https://img.shields.io/david/domharrington/js-number-abbreviate.svg)](https://david-dm.org/domharrington/js-number-abbreviate) |
