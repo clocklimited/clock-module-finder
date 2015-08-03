@@ -20,6 +20,7 @@ describe('api', function () {
 
     it('should get the list of current Clock members', function (done) {
       api.getOrgMembers({ org: 'clocklimited' }, function (err, members) {
+        // TODO : change to check against static nock & specific length
         assert.equal((typeof members), 'object')
         assert.equal(members.length > 0, true)
         assert.equal(typeof members[0], 'object')
@@ -33,38 +34,30 @@ describe('api', function () {
       var includeList = [ 'serby' ]
       this.timeout(0)
       finder.getClockMembersList(includeList, function (err, members) {
-        assert.equal(members.indexOf(includeList[0]) > 0, true,  'Included members aren\'t returned')
+        assert.equal(members[members.length - 1], 'serby',  'Included members aren\'t returned')
         done()
       })
-      /*
-      moduleFinder.findModules({ includeList: includeList }, function (err, members) {
-        console.log(members)
-        var includedMembers = members.filter(function (member) {
-          return includeList.indexOf(member.user) > -1
-        });
-        assert.equal(includedMembers.length > 0, true,  'Included members aren\'t returned')
-        done()
-      })
-      */
     })
   })
 
   describe('#getRepos', function () {
-      describe('#getClockRepos', function () {
+    describe('#getClockRepos', function () {
       it('should get the short list of Clock repos', function (done) {
         this.timeout(0)
         api.getRepos({ teamId: '152302', type: 'private' }, function(err, repos) {
+          // check against expected values
           assert.equal(typeof repos, 'object', 'Repo list is not an object')
           done()
         })
       })
 
-      // Skipped as there isn't a nock case
       it('should get the multiple pages of Clock repos', function (done) {
         this.timeout(0)
         api.getRepos({ teamId: '152302' }, function (err, repos) {
+          // see above
+          // use exact values
           assert.equal(typeof repos, 'object', 'Repo list is an object')
-          assert.equal(repos.length > 100, true, 'Has not used multiple pages')
+          assert.equal(repos.length, 102, 'Has not used multiple pages')
           done()
         })
       })
@@ -74,12 +67,12 @@ describe('api', function () {
       it('should get list of repos', function (done) {
         this.timeout(0)
         api.getRepos({ user: 'tj' }, function (err, repos) {
+          // more specific tests
           assert.equal(typeof repos, 'object', 'Repo list is not an object')
           done()
         })
       })
 
-      // Skipped as there isn't a nock case
       it('should get multiple pages of tj\'s repos', function (done) {
         this.timeout(0)
         api.getRepos({ user: 'tj' }, function(err, repos) {
@@ -94,6 +87,7 @@ describe('api', function () {
   describe('#getPackageJson', function () {
     it('should get the package json for a repo', function (done) {
       api.getPackageJson({ user: 'maael', repo: 'gw2-api-wrapper' }, function (err, packageJson) {
+        // more specific, check in package.json
         assert.equal(err, null, 'An error is returned')
         assert.equal(typeof packageJson, 'object', 'packageJson wasn\'t an object')
         done()
@@ -103,6 +97,7 @@ describe('api', function () {
 
   describe('#getPackageRepo', function () {
     it('should get the repo of the package', function (done) {
+      // more specific
       npm.load({}, function () {
         api.getPackageRepo('mocha', function (err, packageRepo) {
           assert.equal(err, null, 'An error is returned')

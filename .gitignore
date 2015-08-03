@@ -1,3 +1,6 @@
+# Ignore Mac generated files
+.DS_STORE
+
 # Logs
 logs
 *.log
