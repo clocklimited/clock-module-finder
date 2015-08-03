@@ -10,15 +10,18 @@ describe('report', function () {
             , url: 'git://github.com/serby/schemata.git'
             , repo: 'schemata'
             , count: 38
+            , david: false
             }
           ]
-        , expectedReport = [
+        , expectedReportLines = [
             '# Clock npm package leaderboard'
-          , '* [serby/schemata](https://github.com/serby/schemata) has been used 38 times.'
+          , '| Repository | Number of times used | David-dm | '
+          , '|:-----------|:---------------------|:---------| '
+          ,  '| [serby/schemata](https://github.com/serby/schemata) | 38 |  ✘ |'
           , ''
           ]
         , reportText = report.get(null, reportTestData)
-        assert.deepEqual(reportText.split('\n'), expectedReport, 'A correctly formated report was not returned')
+        assert.deepEqual(reportText.split('\n'), expectedReportLines, 'A correctly formatted report was not returned')
     })
   })
 })
