@@ -3,7 +3,7 @@ var assert = require('assert')
   , npm = require('npm')
 
 describe('api', function () {
-  describe('Test calls to github API for organisation members')
+  describe('Test calls to github API for organisation members', function () {
     describe('#getOrgMembers', function () {
       it('should get multiple pages of members for nodejs', function (done) {
         this.timeout(0)
@@ -24,7 +24,7 @@ describe('api', function () {
         })
       })
     })
-  // There should be one here to match line 6 })
+  })
 
   describe('Test calls to github API for organisation and user repositories', function () {
     describe('#getClockRepos', function () {
