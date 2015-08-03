@@ -5,7 +5,7 @@ var assert = require('assert')
   , npm = require('npm')
 
 /* Uncomment / comment for offline / online tests */
-// require('./nockSetup.js')()
+  require('./nockSetup.js')()
 
 describe('api', function () {
   describe('#getOrgMembers', function () {
@@ -30,15 +30,22 @@ describe('api', function () {
     })
 
     it('should add non-Clock members from an include list', function (done) {
-      var includeList = [ 'tomgco' ]
+      var includeList = [ 'serby' ]
       this.timeout(0)
+      finder.getClockMembersList(includeList, function (err, members) {
+        assert.equal(members.indexOf(includeList[0]) > 0, true,  'Included members aren\'t returned')
+        done()
+      })
+      /*
       moduleFinder.findModules({ includeList: includeList }, function (err, members) {
+        console.log(members)
         var includedMembers = members.filter(function (member) {
           return includeList.indexOf(member.user) > -1
         });
         assert.equal(includedMembers.length > 0, true,  'Included members aren\'t returned')
         done()
       })
+      */
     })
   })
 

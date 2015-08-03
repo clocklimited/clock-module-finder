@@ -61,10 +61,9 @@ module.exports = function (options) {
 
     async.parallel(
       { packages: getPackages
-      , members: finder.getClockMembersList
+      , members: finder.getClockMembersList.bind(null, options.includeList)
       }
     , function(err, res) {
-        res.members = res.members.concat(options.includeList)
         stats.numberOfMembers = res.members.length
         var userModules = res.packages.filter(function(pack) {
           return (res.members.indexOf(pack.user) > -1)

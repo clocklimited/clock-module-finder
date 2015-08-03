@@ -26,13 +26,15 @@ module.exports = function () {
     })
   }
 
-  function getClockMembersList(cb) {
+  function getClockMembersList(includeList, cb) {
+    includeList = includeList || []
     api.getOrgMembers({ org: 'clocklimited' }, function (err, members) {
       if (err) return cb(err)
       var membersList = members.reduce(function (list, member) {
         list.push(member.login)
         return list
       }, [])
+      membersList = membersList.concat(includeList)
       cb(null, membersList)
     })
   }
