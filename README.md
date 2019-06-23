@@ -2,7 +2,7 @@
 
 [![Build Status](https://img.shields.io/travis/clocklimited/clock-module-finder/master.svg?style=flat-square)](https://travis-ci.org/clocklimited/clock-module-finder)
 [![Dependencies Status](https://img.shields.io/david/clocklimited/clock-module-finder.svg?style=flat-square)](https://david-dm.org/clocklimited/clock-module-finder)
-[![Coverage Status](https://img.shields.io/coveralls/clocklimited/clock-module-finder/master.svg?style=flat-square)](https://coveralls.io/github/clocklimited/clock-module-finder?branch=master)
+[![Coverage Status](https://img.shields.io/coveralls/clocklimited/clock-module-finder/master.svg?style=flat-square)](https://coveralls.io/github/clocklimited/clock-module-finder?branch=master) [![Greenkeeper badge](https://badges.greenkeeper.io/clocklimited/clock-module-finder.svg)](https://greenkeeper.io/)
 
 This package is being built to gather data about packages that have been used in an organisations repositories, but are not maintained by the organisation, but rather its employees past and present.
 
