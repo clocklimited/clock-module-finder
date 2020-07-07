@@ -20,7 +20,7 @@
     "github": "^0.2.4",
     "mocha-lcov-reporter": "0.0.2",
     "nock": "^2.9.1",
-    "npm": "^2.13.2"
+    "npm": "^6.14.6"
   },
   "devDependencies": {
     "mocha": "^2.2.5"
